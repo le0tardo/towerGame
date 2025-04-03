@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class DeathFXPool : MonoBehaviour
@@ -18,8 +19,14 @@ public class DeathFXPool : MonoBehaviour
             {
                 deathFX[i].SetActive(true);
                 deathFX[i].transform.position = pos;
+                StartCoroutine(DeactivateFX(deathFX[i]));
                 break;
             }
         }
+    }
+    IEnumerator DeactivateFX(GameObject fx)
+    {
+        yield return new WaitForSeconds(0.5f);
+        fx.SetActive(false);
     }
 }
