@@ -90,4 +90,9 @@ public class TowerBehaviour : MonoBehaviour
             }
         }
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(transform.position,towerBase.range);
+    }
 }

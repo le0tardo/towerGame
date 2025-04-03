@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Splines;
 using UnityEngine.UI;
@@ -14,6 +15,8 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] Image health;
     SplineAnimate anim;
 
+    public bool inCombat = false;
+
     private void Start()
     {
         anim = GetComponent<SplineAnimate>();
@@ -26,6 +29,7 @@ public class EnemyBehaviour : MonoBehaviour
         hp = enemyBase.hp;
         maxHp = hp;
         damage = enemyBase.damage;
+        inCombat = false;
     }
 
     private void Update()
@@ -36,15 +40,35 @@ public class EnemyBehaviour : MonoBehaviour
 
         if (hp <= 0)
         {
-            //anim.Pause();
             DeathFXPool.Instance.SpawnDeathFX(transform.position);
             anim.Restart(true);
             gameObject.SetActive(false);
+        }
+
+    }
+
+    public void CheckCombat(bool combat)
+    {
+        inCombat = combat;
+        if (combat)
+        {
+            anim.Pause();
+            //get ref to hero script here..
+
+        }
+        else
+        {
+            anim.Play();
         }
     }
 
     public void TakeDamage(float dmg)
     {
         hp -= dmg;
+    }
+
+    IEnumerator DealDamage()
+    {
+        yield return null;
     }
 }
