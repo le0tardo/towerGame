@@ -8,6 +8,7 @@ public class EnemyBehaviour : MonoBehaviour
     public float hp;
     float maxHp;
     float p;
+    public float damage;
 
     [SerializeField] Canvas canvas;
     [SerializeField] Image health;
@@ -15,11 +16,16 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void Start()
     {
-        hp = enemyBase.hp;
-        maxHp = hp;
         anim = GetComponent<SplineAnimate>();
         anim.MaxSpeed = enemyBase.speed;
         //if (anim.Container == null) { anim.Container}
+    }
+
+    private void OnEnable()
+    {
+        hp = enemyBase.hp;
+        maxHp = hp;
+        damage = enemyBase.damage;
     }
 
     private void Update()
@@ -30,7 +36,10 @@ public class EnemyBehaviour : MonoBehaviour
 
         if (hp <= 0)
         {
-            anim.Pause();
+            //anim.Pause();
+            DeathFXPool.Instance.SpawnDeathFX(transform.position);
+            anim.Restart(true);
+            gameObject.SetActive(false);
         }
     }
 
