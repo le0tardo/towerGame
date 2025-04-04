@@ -16,6 +16,7 @@ public class EnemyBehaviour : MonoBehaviour
     SplineAnimate anim;
 
     public bool inCombat = false;
+    public GameObject myTarget = null;
 
     private void Start()
     {
@@ -30,6 +31,7 @@ public class EnemyBehaviour : MonoBehaviour
         maxHp = hp;
         damage = enemyBase.damage;
         inCombat = false;
+        anim?.Play();
     }
 
     private void Update()
@@ -44,19 +46,31 @@ public class EnemyBehaviour : MonoBehaviour
             anim.Restart(true);
             gameObject.SetActive(false);
         }
-
     }
 
-    public void CheckCombat(bool combat)
+    public void GetTarget(GameObject target)
     {
-        inCombat = combat;
-        if (combat)
+        myTarget = target;
+        if (myTarget!=null)
         {
             anim.Pause();
-            //get ref to hero script here..
-
+            if (!inCombat)
+            {
+                StartCoroutine(DealDamage());
+                inCombat = true;
+            }
         }
         else
+        {
+            Invoke("ResumeWalking", 0.5f);
+            inCombat = false;
+            StopAllCoroutines();
+        }
+    }
+
+    void ResumeWalking()
+    {
+        if (!anim.IsPlaying)
         {
             anim.Play();
         }
@@ -68,7 +82,12 @@ public class EnemyBehaviour : MonoBehaviour
     }
 
     IEnumerator DealDamage()
-    {
-        yield return null;
+    {  
+        while (myTarget != null)
+        {
+            yield return new WaitForSeconds(enemyBase.meleeCooldown);
+            myTarget.GetComponent<HeroBehaviour>().TakeDamage(enemyBase.meleeDamage);
+        }
+        inCombat = false;
     }
 }

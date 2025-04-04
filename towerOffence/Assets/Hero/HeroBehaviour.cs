@@ -8,15 +8,17 @@ public class HeroBehaviour : MonoBehaviour
     [SerializeField] HeroBase heroBase;
     [SerializeField] Canvas canvas;
     [SerializeField] Image health;
+    [SerializeField] GameObject deathFX;
 
     float hp;
     float maxHp;
     float p;
-
+    float speed;
     public bool inCombat = false;
+    bool foundTarget = false;
+    bool isDead = false;
     public List<GameObject> potentialTargets = new List<GameObject>();
     public GameObject currentTarget;
-
     SphereCollider rangeTrigger;
 
     private void Start()
@@ -25,33 +27,30 @@ public class HeroBehaviour : MonoBehaviour
         maxHp = hp;
         rangeTrigger = GetComponent<SphereCollider>();
         rangeTrigger.radius = heroBase.range;
-
+        speed = heroBase.speed;
     }
 
     private void Update()
     {
-
         UpdateHp();
         FindTargets();
 
         if (currentTarget != null)
         {
-            currentTarget.GetComponent<EnemyBehaviour>().CheckCombat(true);
+            if(!foundTarget)currentTarget.GetComponent<EnemyBehaviour>().GetTarget(this.gameObject);
+            foundTarget = true;
             MoveToTarget();
-
         }
         else
         {
             inCombat=false;
+            foundTarget = false;
             StopAllCoroutines();
         }
+
         if (hp <= 0)
         {
-            if (currentTarget != null)
-            {
-                currentTarget.GetComponent<EnemyBehaviour>().CheckCombat(false);
-            }
-            StopAllCoroutines();
+            if (!isDead) { Death();} 
         }
     }
 
@@ -72,22 +71,36 @@ public class HeroBehaviour : MonoBehaviour
             currentTarget = null;
         }
     }
-
     public void TakeDamage(float damage)
     {
         hp-=damage;
-        if (hp <= 0)
-        {
-            //kill 
-        }
-    }
 
+    }
+    void Death()
+    {
+        isDead = true;
+        if (currentTarget != null)
+        {
+            currentTarget.GetComponent<EnemyBehaviour>().GetTarget(null);
+            currentTarget = null;
+        }
+        potentialTargets.Clear();
+        StopAllCoroutines();
+        speed = 0;
+        deathFX.SetActive(true);
+        MeshRenderer mesh=GetComponentInChildren<MeshRenderer>(); mesh.enabled = false;
+        Invoke("Kill", 1f);
+    }
+    void Kill()
+    {
+        this.gameObject.SetActive(false);
+    }
     void MoveToTarget()
     {
         float dist = Vector3.Distance(transform.position,currentTarget.transform.position);
         if (dist > 1.5f)
         {
-            transform.position = Vector3.MoveTowards(transform.position, currentTarget.transform.position, heroBase.speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, currentTarget.transform.position, speed * Time.deltaTime);
         }
         else
         {
@@ -109,25 +122,27 @@ public class HeroBehaviour : MonoBehaviour
             {
                 potentialTargets.Remove(currentTarget);
                 inCombat = false;
+                foundTarget = false;
                 StopAllCoroutines();
             }
 
             yield return new WaitForSeconds(heroBase.coolDown);
         }
+        foundTarget = false;
         inCombat = false;
     }
 
     #region //Trigger
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy")&&hp>0)
         {
             potentialTargets.Add(other.gameObject);
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy")&&hp>0)
         {
             potentialTargets.Remove(other.gameObject);
         }

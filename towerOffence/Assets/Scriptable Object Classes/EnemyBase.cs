@@ -13,6 +13,10 @@ public class EnemyBase : ScriptableObject
     public float coolDown;
     public int cost;
 
+    [Header("Melee Stats")]
+    public float meleeDamage;
+    public float meleeCooldown;
+
     [Header("Enemy Gfx")]
     public Sprite enemyIcon;
     public GameObject enemyPrefab;

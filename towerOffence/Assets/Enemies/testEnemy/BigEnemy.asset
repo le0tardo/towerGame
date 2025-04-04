@@ -20,5 +20,7 @@ MonoBehaviour:
   magicResist: 0
   coolDown: 1
   cost: 25
+  meleeDamage: 10
+  meleeCooldown: 2
   enemyIcon: {fileID: 0}
   enemyPrefab: {fileID: 0}
