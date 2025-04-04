@@ -6,13 +6,15 @@ using System.Collections;
 public class ManaManager : MonoBehaviour
 {
     public int mana;
-    int maxMana = 100;
+    public int maxMana = 100;
     [SerializeField] Image manaBar;
     [SerializeField] TMP_Text manaText;
+    GameManager game;
 
     private void Start()
     {
         mana = maxMana;
+        game=GetComponent<GameManager>();
     }
     private void Update()
     {
@@ -21,10 +23,11 @@ public class ManaManager : MonoBehaviour
         manaBar.rectTransform.localScale = new Vector3(p, manaBar.rectTransform.localScale.y, manaBar.rectTransform.localScale.z);
         manaText.text = mana + "/" + maxMana;
 
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            StartCoroutine(RefillMana());
-        }
+    }
+
+    public void RefillManaEvent()
+    {
+        StartCoroutine(RefillMana());
     }
 
     private IEnumerator RefillMana()
@@ -35,5 +38,6 @@ public class ManaManager : MonoBehaviour
             mana = Mathf.Min(mana, maxMana);
             yield return new WaitForSeconds(0.001f);
         }
+        game.wave++;
     }
 }

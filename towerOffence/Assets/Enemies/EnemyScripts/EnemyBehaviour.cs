@@ -13,7 +13,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     [SerializeField] Canvas canvas;
     [SerializeField] Image health;
-    SplineAnimate anim;
+    public  SplineAnimate anim;
 
     public bool inCombat = false;
     public GameObject myTarget = null;
@@ -46,6 +46,24 @@ public class EnemyBehaviour : MonoBehaviour
             anim.Restart(true);
             gameObject.SetActive(false);
         }
+
+        if (myTarget != null)
+        {
+            //turn to face target here
+            Vector3 dir=myTarget.transform.position-transform.position;
+            Quaternion look = Quaternion.LookRotation(dir);
+            transform.rotation = Quaternion.Slerp(transform.rotation, look, 5f * Time.deltaTime);
+
+            GameObject targetsTarget=myTarget.GetComponent<HeroBehaviour>().currentTarget;
+            if (targetsTarget != this.gameObject) { myTarget=null; }
+        }
+        else
+        {
+            //turn to face direction
+            Quaternion look = Quaternion.LookRotation(Vector3.forward);
+            transform.rotation = Quaternion.Slerp(transform.rotation, look, 5f * Time.deltaTime);
+        }
+
     }
 
     public void GetTarget(GameObject target)
@@ -53,7 +71,8 @@ public class EnemyBehaviour : MonoBehaviour
         myTarget = target;
         if (myTarget!=null)
         {
-            anim.Pause();
+            //anim.Pause();
+            Invoke("StopWalking",0.25f);
             if (!inCombat)
             {
                 StartCoroutine(DealDamage());
@@ -68,6 +87,13 @@ public class EnemyBehaviour : MonoBehaviour
         }
     }
 
+    void StopWalking()
+    {
+        if (anim.IsPlaying)
+        {
+            anim.Pause();
+        }
+    }
     void ResumeWalking()
     {
         if (!anim.IsPlaying)
@@ -86,7 +112,7 @@ public class EnemyBehaviour : MonoBehaviour
         while (myTarget != null)
         {
             yield return new WaitForSeconds(enemyBase.meleeCooldown);
-            myTarget.GetComponent<HeroBehaviour>().TakeDamage(enemyBase.meleeDamage);
+           if(myTarget!=null) myTarget.GetComponent<HeroBehaviour>().TakeDamage(enemyBase.meleeDamage);
         }
         inCombat = false;
     }

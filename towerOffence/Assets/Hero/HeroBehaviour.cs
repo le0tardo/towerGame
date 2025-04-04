@@ -21,6 +21,11 @@ public class HeroBehaviour : MonoBehaviour
     public GameObject currentTarget;
     SphereCollider rangeTrigger;
 
+    Vector3 home;
+    float distanceHome=0;
+    public bool isHome=true;
+    Vector3 startRotation;
+
     private void Start()
     {
         hp = heroBase.hp;
@@ -28,6 +33,9 @@ public class HeroBehaviour : MonoBehaviour
         rangeTrigger = GetComponent<SphereCollider>();
         rangeTrigger.radius = heroBase.range;
         speed = heroBase.speed;
+        home=transform.position;
+
+        startRotation = Vector3.forward;
     }
 
     private void Update()
@@ -35,6 +43,25 @@ public class HeroBehaviour : MonoBehaviour
         UpdateHp();
         FindTargets();
 
+        distanceHome = Vector3.Distance(transform.position,home);
+        if (distanceHome > 0.01f)
+        {
+            isHome = false;
+        }
+        else
+        {
+            isHome = true;
+            if (Vector3.Angle(transform.forward,startRotation)>1)
+            { 
+                Quaternion toRotation = Quaternion.LookRotation(startRotation);
+                transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, 10f * Time.deltaTime);
+            }
+        }
+
+        if (!isHome && !inCombat && potentialTargets.Count <= 0)
+        {
+            GoHome();
+        }
         if (currentTarget != null)
         {
             if(!foundTarget)currentTarget.GetComponent<EnemyBehaviour>().GetTarget(this.gameObject);
@@ -70,6 +97,15 @@ public class HeroBehaviour : MonoBehaviour
         {
             currentTarget = null;
         }
+
+        for (int i = 0; i < potentialTargets.Count; i++)
+        {
+            float enemyHp = potentialTargets[i].GetComponent<EnemyBehaviour>().hp;
+            if (enemyHp <= 0)
+            {
+                potentialTargets.Remove(potentialTargets[i]);
+            }
+        }
     }
     public void TakeDamage(float damage)
     {
@@ -101,6 +137,15 @@ public class HeroBehaviour : MonoBehaviour
         if (dist > 1.5f)
         {
             transform.position = Vector3.MoveTowards(transform.position, currentTarget.transform.position, speed * Time.deltaTime);
+
+            Vector3 direction = currentTarget.transform.position - transform.position;
+            if (direction != Vector3.zero)
+            {
+                Quaternion toRotation = Quaternion.LookRotation(direction);
+                transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, 10f * Time.deltaTime);
+            }
+
+            isHome = false;
         }
         else
         {
@@ -108,6 +153,16 @@ public class HeroBehaviour : MonoBehaviour
             {
                 StartCoroutine(AttackTarget());
             }
+        }
+    }
+    void GoHome()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, home, speed * Time.deltaTime);
+        Vector3 direction = home - transform.position;
+        if (direction != Vector3.zero)
+        {
+            Quaternion toRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, 10f * Time.deltaTime);
         }
     }
 
@@ -125,6 +180,9 @@ public class HeroBehaviour : MonoBehaviour
                 foundTarget = false;
                 StopAllCoroutines();
             }
+
+            GameObject enemyTarget = currentTarget.GetComponent<EnemyBehaviour>().myTarget;
+            if (enemyTarget == null) { currentTarget.GetComponent<EnemyBehaviour>().GetTarget(this.gameObject);}
 
             yield return new WaitForSeconds(heroBase.coolDown);
         }

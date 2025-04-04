@@ -22,6 +22,7 @@ public class Gate : MonoBehaviour
             {
                 float dmg = enemy.damage;
                 Hit(Mathf.RoundToInt(dmg));
+                enemy.anim.Restart(true);
             }
 
             other.gameObject.SetActive(false);
