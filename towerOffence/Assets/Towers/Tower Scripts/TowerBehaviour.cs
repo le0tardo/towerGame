@@ -1,5 +1,7 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections.Generic;
+using TMPro;
 
 public class TowerBehaviour : MonoBehaviour
 {
@@ -15,16 +17,22 @@ public class TowerBehaviour : MonoBehaviour
 
     CapsuleCollider rangeTrigger;
 
+    [Header("Tower Canvas")]
+    [SerializeField] TMP_Text towerName;
+    [SerializeField] Image coolDownFill;
+
+
     private void Start()
     {
         //sync stats to scriptable
         range=towerBase.range;
         speed=towerBase.speed;
         damage=towerBase.damage;
-        coolDown = 0;
+        coolDown = towerBase.speed;
 
         rangeTrigger = GetComponent<CapsuleCollider>();
         rangeTrigger.radius = range;
+        towerName.text = towerBase.towerName;
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -66,6 +74,7 @@ public class TowerBehaviour : MonoBehaviour
 
             //cool down counter
             coolDown-=Time.deltaTime;
+            coolDownFill.fillAmount = coolDown/towerBase.speed;
             if (coolDown <= 0)
             {
                 Fire();

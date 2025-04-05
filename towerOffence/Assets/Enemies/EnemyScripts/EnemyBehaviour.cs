@@ -55,7 +55,7 @@ public class EnemyBehaviour : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, look, 5f * Time.deltaTime);
 
             GameObject targetsTarget=myTarget.GetComponent<HeroBehaviour>().currentTarget;
-            if (targetsTarget != this.gameObject) { myTarget=null; }
+            if (targetsTarget != this.gameObject) { myTarget=null;inCombat = false;StopAllCoroutines();}
         }
         else
         {

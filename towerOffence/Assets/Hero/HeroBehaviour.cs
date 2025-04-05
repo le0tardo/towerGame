@@ -154,6 +154,15 @@ public class HeroBehaviour : MonoBehaviour
                 StartCoroutine(AttackTarget());
             }
         }
+
+        if (distanceHome > 10)
+        {
+            potentialTargets.Clear();
+            currentTarget = null;
+            inCombat = false;
+            StopAllCoroutines();
+            GoHome();
+        }
     }
     void GoHome()
     {
@@ -195,6 +204,7 @@ public class HeroBehaviour : MonoBehaviour
     {
         if (other.CompareTag("Enemy")&&hp>0)
         {
+            //if isHome?
             potentialTargets.Add(other.gameObject);
         }
     }
