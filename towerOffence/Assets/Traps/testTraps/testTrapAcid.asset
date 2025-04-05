@@ -9,15 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d92b9247d70ac641a880f4b8e6a6c58, type: 3}
-  m_Name: TestTowerAOE
+  m_Script: {fileID: 11500000, guid: bb3b86bf6c73a6c47b1cf36ded4ef670, type: 3}
+  m_Name: testTrapAcid
   m_EditorClassIdentifier: 
-  towerName: AOE Tower
-  cost: 0
-  range: 10
-  speed: 3
-  damage: 5
-  damageType: 0
-  elementType: 0
-  icon: {fileID: 0}
-  prefab: {fileID: 0}
+  trapName: Acid Trap
+  damage: 3
+  coolDown: 0.5
+  damageType: 2
+  elementType: 3
+  singleUse: 0
