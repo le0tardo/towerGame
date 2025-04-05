@@ -17,6 +17,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     public bool inCombat = false;
     public GameObject myTarget = null;
+    bool frozen = false;
 
     private void Start()
     {
@@ -106,7 +107,24 @@ public class EnemyBehaviour : MonoBehaviour
     {
         hp -= dmg;
     }
+    public void Freeze(float duration)
+    {
+        if (frozen) { return; }
 
+        float progress=anim.NormalizedTime;
+        anim.MaxSpeed = enemyBase.speed / 2;
+        anim.NormalizedTime = progress;
+        frozen = true;
+        Invoke("Unfreeze", duration);
+    }
+    public void Unfreeze()
+    {
+        if (!frozen) {  return; }   
+        float progress = anim.NormalizedTime;
+        anim.MaxSpeed = enemyBase.speed;
+        anim.NormalizedTime = progress;
+        frozen = false;
+    }
     IEnumerator DealDamage()
     {  
         while (myTarget != null)

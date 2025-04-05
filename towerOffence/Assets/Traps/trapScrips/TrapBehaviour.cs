@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class TrapBehaviour : MonoBehaviour
@@ -13,12 +14,18 @@ public class TrapBehaviour : MonoBehaviour
     [SerializeField] LayerMask enemyLayer;
     public float area;
 
+    [SerializeField] TMP_Text trapName;
+
+    ElementType element;
+
     private void Start()
     {
         damage=trapBase.damage;
         coolDown=trapBase.coolDown;
         maxCoolDown = trapBase.coolDown;
         area=trapBase.area;
+        element = trapBase.elementType;
+        trapName.text = trapBase.trapName;
     }
     private void Update()
     {
@@ -30,7 +37,11 @@ public class TrapBehaviour : MonoBehaviour
             if (!singleUse) { 
                 foreach (GameObject enemy in enemies)
                 {
-                    enemy.GetComponent<EnemyBehaviour>().TakeDamage(damage);
+                    if (damage > 0) { enemy.GetComponent<EnemyBehaviour>().TakeDamage(damage); }
+                    if (element == ElementType.Ice)
+                    {
+                       // enemy.GetComponent<EnemyBehaviour>().Freeze(1f); //moved to triggerEvents
+                    }
                 }
                  coolDown = maxCoolDown;
             }
@@ -43,13 +54,12 @@ public class TrapBehaviour : MonoBehaviour
 
     void Explode()
     {
-        Debug.Log("boom");
         Collider[] hitEnemies = Physics.OverlapSphere(transform.position, area, enemyLayer);
         foreach (Collider hit in hitEnemies)
         {
             if (hit.CompareTag("Enemy"))
             {
-                hit.GetComponent<EnemyBehaviour>().TakeDamage(damage);
+                if (damage > 0) { hit.GetComponent<EnemyBehaviour>().TakeDamage(damage); }
             }
         }
         this.gameObject.SetActive(false);
@@ -65,6 +75,11 @@ public class TrapBehaviour : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             enemies.Add(other.gameObject);
+
+            if (element == ElementType.Ice)
+            {
+                other.gameObject.GetComponent<EnemyBehaviour>().Freeze(10f); //overkill, but resets on triggerExit
+            }
         }
     }
     private void OnTriggerExit(Collider other)
@@ -72,6 +87,11 @@ public class TrapBehaviour : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             enemies.Remove(other.gameObject);
+
+            if (element == ElementType.Ice)
+            {
+                other.gameObject.GetComponent<EnemyBehaviour>().Unfreeze();
+            }
         }
     }
 }
