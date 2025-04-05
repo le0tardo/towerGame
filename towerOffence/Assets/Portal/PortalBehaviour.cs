@@ -11,9 +11,12 @@ public class PortalBehaviour : MonoBehaviour
             SpawnAnimation();
         }
     }
-
     public void SpawnAnimation()
     {
         portalAnim.SetTrigger("spawnTrigger");
+    }
+    public void DeathAnimation()
+    {
+        portalAnim.SetTrigger("deathTrigger");
     }
 }
