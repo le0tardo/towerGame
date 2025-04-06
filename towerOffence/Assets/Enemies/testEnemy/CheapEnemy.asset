@@ -18,7 +18,7 @@ MonoBehaviour:
   speed: 5
   damage: 5
   armor: 0
-  magicResist: 0
+  magicResist: 0.9
   coolDown: 0.1
   cost: 5
   meleeDamage: 2

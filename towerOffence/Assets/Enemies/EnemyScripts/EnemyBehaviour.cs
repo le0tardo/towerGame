@@ -52,6 +52,8 @@ public class EnemyBehaviour : MonoBehaviour
         damage = enemyBase.damage;
         inCombat = false;
         anim?.Play();
+
+        //offset graphics element, animator+transform.position.x
     }
 
     private void Update()
@@ -75,7 +77,7 @@ public class EnemyBehaviour : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, look, 5f * Time.deltaTime);
 
             GameObject targetsTarget=myTarget.GetComponent<HeroBehaviour>().currentTarget;
-            if (targetsTarget != this.gameObject) { myTarget=null;inCombat = false;StopAllCoroutines();}
+            if (targetsTarget != this.gameObject) { myTarget=null;inCombat = false;StopAllCoroutines();ResumeWalking();}
         }
         else
         {
@@ -127,10 +129,14 @@ public class EnemyBehaviour : MonoBehaviour
         switch (type)
         {
             case DamageType.Physical:
-                dmg -= enemyBase.armor; if (dmg < 0) { dmg = 0; }
-            break;
+                //dmg -= enemyBase.armor; if (dmg < 0) { dmg = 0; }
+                dmg *= 1f - enemyBase.armor;
+                dmg = Mathf.Max(dmg, 0);
+                break;
             case DamageType.Magical:
-                dmg-=enemyBase.magicResist; if (dmg < 0) {  dmg = 0; }        
+                //dmg-=enemyBase.magicResist; if (dmg < 0) {  dmg = 0; }
+                dmg *= 1f - enemyBase.magicResist;
+                dmg=Mathf.Max(dmg, 0);
             break;
             case DamageType.Elemental:
                 //uuuuhh idk yet

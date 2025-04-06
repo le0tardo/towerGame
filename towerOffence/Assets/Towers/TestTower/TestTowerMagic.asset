@@ -9,13 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb3b86bf6c73a6c47b1cf36ded4ef670, type: 3}
-  m_Name: testTrapBomb
+  m_Script: {fileID: 11500000, guid: 7d92b9247d70ac641a880f4b8e6a6c58, type: 3}
+  m_Name: TestTowerMagic
   m_EditorClassIdentifier: 
-  trapName: Test Bomb
-  damage: 50
-  coolDown: 0.1
-  area: 5
+  towerName: Magic Tower
+  cost: 0
+  range: 15
+  speed: 2
+  damage: 15
   damageType: 0
   elementType: 0
-  singleUse: 1
+  icon: {fileID: 0}
+  prefab: {fileID: 0}

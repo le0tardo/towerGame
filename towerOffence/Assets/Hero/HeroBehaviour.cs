@@ -218,4 +218,9 @@ public class HeroBehaviour : MonoBehaviour
         }
     }
     #endregion
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(transform.position, heroBase.range);
+    }
 }
