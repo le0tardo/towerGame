@@ -5,6 +5,7 @@ public class EnemyBase : ScriptableObject
 {
     [Header("Enemy Stats")]
     public string enemyName;
+    public EnemyType enemyType;
     public float hp;
     public float speed;
     public float damage;
@@ -24,8 +25,9 @@ public class EnemyBase : ScriptableObject
 }
 public enum EnemyType //even necessary?
 {
+    Basic,
     Demon,
     Undead,
-    Swarm // insect/spider thing
+    Swarm // insect/spider thing, fire weakness
 }
 

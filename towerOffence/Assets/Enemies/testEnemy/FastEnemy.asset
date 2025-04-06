@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: FastEnemy
   m_EditorClassIdentifier: 
   enemyName: Fast Enemy
+  enemyType: 1
   hp: 20
   speed: 10
   damage: 5

@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: testTrapAcid
   m_EditorClassIdentifier: 
   trapName: Acid Trap
-  damage: 3
+  damage: 8
   coolDown: 0.5
+  area: 0
   damageType: 2
   elementType: 3
   singleUse: 0

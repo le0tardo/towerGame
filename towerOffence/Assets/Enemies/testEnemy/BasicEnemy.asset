@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BasicEnemy
   m_EditorClassIdentifier: 
   enemyName: Basic Enemy
+  enemyType: 1
   hp: 50
   speed: 5
   damage: 10

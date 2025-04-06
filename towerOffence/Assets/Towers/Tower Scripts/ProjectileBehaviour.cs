@@ -8,6 +8,9 @@ public class ProjectileBehaviour : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] bool AOE = false;
     [SerializeField] float area;
+    [SerializeField] DamageType damageType;
+    [SerializeField] ElementType elementType;
+    [SerializeField] float effectDuration;
     [SerializeField] LayerMask enemyLayer;
     Vector3 startPos;
     Vector3 targetPos;
@@ -74,7 +77,7 @@ public class ProjectileBehaviour : MonoBehaviour
         if (tower.currentTarget != null)
         {
             EnemyBehaviour eh=tower.currentTarget.GetComponent<EnemyBehaviour>();
-            eh.TakeDamage(damage);
+            eh.TakeDamage(damage, damageType, elementType, effectDuration);
         }
         this.gameObject.SetActive(false);
     }
@@ -86,7 +89,7 @@ public class ProjectileBehaviour : MonoBehaviour
         {
             if (hit.CompareTag("Enemy"))
             {
-                hit.GetComponent<EnemyBehaviour>().TakeDamage(damage);
+                hit.GetComponent<EnemyBehaviour>().TakeDamage(damage, damageType, elementType,0);
             }
         }
         this.gameObject.SetActive(false);

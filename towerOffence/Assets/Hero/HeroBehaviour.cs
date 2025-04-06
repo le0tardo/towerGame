@@ -20,6 +20,8 @@ public class HeroBehaviour : MonoBehaviour
     public List<GameObject> potentialTargets = new List<GameObject>();
     public GameObject currentTarget;
     SphereCollider rangeTrigger;
+    DamageType damageType;
+    ElementType elementType;
 
     Vector3 home;
     float distanceHome=0;
@@ -180,7 +182,7 @@ public class HeroBehaviour : MonoBehaviour
         inCombat = true;
         while (currentTarget != null)
         {
-            currentTarget.GetComponent<EnemyBehaviour>().TakeDamage(heroBase.damage);
+            currentTarget.GetComponent<EnemyBehaviour>().TakeDamage(heroBase.damage, damageType,elementType,0);
             float targetHp=currentTarget.GetComponent<EnemyBehaviour>().hp;
             if (targetHp <= 0)
             {

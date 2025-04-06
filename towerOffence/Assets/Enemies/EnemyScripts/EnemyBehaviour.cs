@@ -5,11 +5,13 @@ using UnityEngine.UI;
 
 public class EnemyBehaviour : MonoBehaviour
 {
-    [SerializeField] EnemyBase enemyBase;
+    [SerializeField] public EnemyBase enemyBase;
     public float hp;
     float maxHp;
     float p;
     public float damage;
+    EnemyType enemyType;
+    [SerializeField] float fireMod=1;
 
     [SerializeField] Canvas canvas;
     [SerializeField] Image health;
@@ -24,6 +26,23 @@ public class EnemyBehaviour : MonoBehaviour
         anim = GetComponent<SplineAnimate>();
         anim.MaxSpeed = enemyBase.speed;
         //if (anim.Container == null) { anim.Container}
+
+        enemyType = enemyBase.enemyType;
+        switch (enemyType)
+        {
+            case EnemyType.Basic:
+
+            break;
+            case EnemyType.Demon:
+                fireMod = 0.5f;
+            break;
+            case EnemyType.Undead:
+
+                break;
+            case EnemyType.Swarm:
+                fireMod = 2f;
+            break;
+        }
     }
 
     private void OnEnable()
@@ -103,9 +122,34 @@ public class EnemyBehaviour : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float dmg)
+    public void TakeDamage(float dmg, DamageType type, ElementType element, float effectDuration)
     {
-        hp -= dmg;
+        switch (type)
+        {
+            case DamageType.Physical:
+                dmg -= enemyBase.armor; if (dmg < 0) { dmg = 0; }
+            break;
+            case DamageType.Magical:
+                dmg-=enemyBase.magicResist; if (dmg < 0) {  dmg = 0; }        
+            break;
+            case DamageType.Elemental:
+                //uuuuhh idk yet
+            break;
+        }
+        switch (element)
+        {
+            case ElementType.None: break;
+            case ElementType.Poison: break;
+            case ElementType.Fire:
+                dmg=dmg* fireMod;    
+            break;
+            case ElementType.Ice:
+                Freeze(effectDuration);
+            break;
+        }
+
+        //hp -= dmg;
+        hp-=Mathf.Floor(dmg);
     }
     public void Freeze(float duration)
     {

@@ -11,6 +11,8 @@ public class TrapBehaviour : MonoBehaviour
 
     public bool singleUse = false;
     public List<GameObject> enemies = new List<GameObject>();
+    DamageType damageType;
+    ElementType elementType;
     [SerializeField] LayerMask enemyLayer;
     public float area;
 
@@ -37,11 +39,12 @@ public class TrapBehaviour : MonoBehaviour
             if (!singleUse) { 
                 foreach (GameObject enemy in enemies)
                 {
-                    if (damage > 0) { enemy.GetComponent<EnemyBehaviour>().TakeDamage(damage); }
-                    if (element == ElementType.Ice)
-                    {
-                       // enemy.GetComponent<EnemyBehaviour>().Freeze(1f); //moved to triggerEvents
-                    }
+                    if (damage <= 0) { return; }if (!enemy.activeInHierarchy) { return;}
+                    float spd = enemy.GetComponent<EnemyBehaviour>().enemyBase.speed; //idea, deals more damage to slower enemies!?
+                    float dmg = damage;
+                    dmg=(dmg-spd); if (dmg < 1) { dmg = 1;}
+                    //Debug.Log("trap base damag is: "+trapBase.damage +" enemy speed is "+ spd +". new damage is "+ dmg);
+                    if (dmg > 0) { enemy.GetComponent<EnemyBehaviour>().TakeDamage(dmg, damageType, elementType,0);}
                 }
                  coolDown = maxCoolDown;
             }
@@ -59,7 +62,7 @@ public class TrapBehaviour : MonoBehaviour
         {
             if (hit.CompareTag("Enemy"))
             {
-                if (damage > 0) { hit.GetComponent<EnemyBehaviour>().TakeDamage(damage); }
+                if (damage > 0) { hit.GetComponent<EnemyBehaviour>().TakeDamage(damage,damageType, elementType,0); }
             }
         }
         this.gameObject.SetActive(false);
