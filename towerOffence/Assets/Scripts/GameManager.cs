@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class GameManager : MonoBehaviour
         instance = this;
         if (waves != 0) maxWaves = waves;
         if (gateHp!=0)gate.gateHealth = gateHp;
+        Time.timeScale = 1.0f;
     }
     private void Start()
     {
@@ -42,8 +44,14 @@ public class GameManager : MonoBehaviour
         CountEnemies();
         if (!levelComplete)
         {
-            CheckWin();
             CheckLoss();
+            CheckWin();
+        }
+
+        //debug shit
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
         }
     }
     void CountEnemies()
@@ -54,7 +62,7 @@ public class GameManager : MonoBehaviour
 
     void CheckLoss()
     {
-        if (cheapestUnit<1){Debug.Log("No loss conditiom!");}
+        if (cheapestUnit<1){Debug.Log("No loss condition!");}
 
         if ((wave >= maxWaves) && (enemyCount == 0) && (mana.mana < cheapestUnit)) //lose condition
         {
@@ -71,7 +79,10 @@ public class GameManager : MonoBehaviour
             winObject.SetActive(true);
             levelComplete= true;
             levelHud.SetActive(false);
+            if (loseObject.activeInHierarchy) { loseObject.SetActive(false); }
+            Time.timeScale = 0;
         }
+
     }
  
 }

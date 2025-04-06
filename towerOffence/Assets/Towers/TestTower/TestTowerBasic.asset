@@ -15,7 +15,7 @@ MonoBehaviour:
   towerName: Basic Tower
   cost: 0
   range: 15
-  speed: 1
+  speed: 2
   damage: 10
   damageType: 0
   elementType: 0

@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Cheap Enemy
   enemyType: 1
-  hp: 10
-  speed: 5
-  damage: 5
+  hp: 15
+  speed: 4
+  damage: 1
   armor: 0
-  magicResist: 0.9
-  coolDown: 0.1
-  cost: 5
-  meleeDamage: 2
+  magicResist: 0
+  coolDown: 0.25
+  cost: 10
+  meleeDamage: 4
   meleeCooldown: 1
   enemyIcon: {fileID: 0}
   enemyPrefab: {fileID: 0}

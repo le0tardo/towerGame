@@ -18,15 +18,14 @@ public class TrapBehaviour : MonoBehaviour
 
     [SerializeField] TMP_Text trapName;
 
-    ElementType element;
-
     private void Start()
     {
         damage=trapBase.damage;
         coolDown=trapBase.coolDown;
         maxCoolDown = trapBase.coolDown;
         area=trapBase.area;
-        element = trapBase.elementType;
+        damageType = trapBase.damageType;
+        elementType = trapBase.elementType;
         trapName.text = trapBase.trapName;
     }
     private void Update()
@@ -40,11 +39,15 @@ public class TrapBehaviour : MonoBehaviour
                 foreach (GameObject enemy in enemies)
                 {
                     if (damage <= 0) { return; }if (!enemy.activeInHierarchy) { return;}
+
                     float spd = enemy.GetComponent<EnemyBehaviour>().enemyBase.speed; //idea, deals more damage to slower enemies!?
                     float dmg = damage;
                     dmg=(dmg-spd); if (dmg < 1) { dmg = 1;}
                     //Debug.Log("trap base damag is: "+trapBase.damage +" enemy speed is "+ spd +". new damage is "+ dmg);
-                    if (dmg > 0) { enemy.GetComponent<EnemyBehaviour>().TakeDamage(dmg, damageType, elementType,0);}
+                    if (dmg > 0) { enemy.GetComponent<EnemyBehaviour>().TakeDamage(dmg, damageType, elementType, 0); }
+                    //stupid idea?
+                    //enemy.GetComponent<EnemyBehaviour>().TakeDamage(dmg, damageType, elementType, 0);
+
                 }
                  coolDown = maxCoolDown;
             }
@@ -65,6 +68,7 @@ public class TrapBehaviour : MonoBehaviour
                 if (damage > 0) { hit.GetComponent<EnemyBehaviour>().TakeDamage(damage,damageType, elementType,0); }
             }
         }
+        FXPool.Instance.SpawnFX(transform.position);
         this.gameObject.SetActive(false);
     }
 
@@ -79,7 +83,7 @@ public class TrapBehaviour : MonoBehaviour
         {
             enemies.Add(other.gameObject);
 
-            if (element == ElementType.Ice)
+            if (elementType == ElementType.Ice)
             {
                 other.gameObject.GetComponent<EnemyBehaviour>().Freeze(10f); //overkill, but resets on triggerExit
             }
@@ -91,7 +95,7 @@ public class TrapBehaviour : MonoBehaviour
         {
             enemies.Remove(other.gameObject);
 
-            if (element == ElementType.Ice)
+            if (elementType == ElementType.Ice)
             {
                 other.gameObject.GetComponent<EnemyBehaviour>().Unfreeze();
             }

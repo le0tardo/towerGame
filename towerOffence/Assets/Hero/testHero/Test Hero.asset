@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Test Hero
   m_EditorClassIdentifier: 
   heroName: Test Hero
-  hp: 50
+  hp: 30
   speed: 5
   damage: 5
   armor: 0

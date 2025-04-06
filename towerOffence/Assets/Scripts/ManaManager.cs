@@ -18,7 +18,7 @@ public class ManaManager : MonoBehaviour
     }
     private void Update()
     {
-        mana = Mathf.Clamp(mana, 0, 100);
+        mana = Mathf.Clamp(mana, 0, maxMana);
         float p = (float)mana /(float)maxMana;
         manaBar.rectTransform.localScale = new Vector3(p, manaBar.rectTransform.localScale.y, manaBar.rectTransform.localScale.z);
         manaText.text = mana + "/" + maxMana;

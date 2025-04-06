@@ -79,6 +79,7 @@ public class ProjectileBehaviour : MonoBehaviour
             EnemyBehaviour eh=tower.currentTarget.GetComponent<EnemyBehaviour>();
             eh.TakeDamage(damage, damageType, elementType, effectDuration);
         }
+        FXPool.Instance.SpawnFX(transform.position);
         this.gameObject.SetActive(false);
     }
 
@@ -92,6 +93,7 @@ public class ProjectileBehaviour : MonoBehaviour
                 hit.GetComponent<EnemyBehaviour>().TakeDamage(damage, damageType, elementType,0);
             }
         }
+        FXPool.Instance.SpawnFX(transform.position);
         this.gameObject.SetActive(false);
     }
 

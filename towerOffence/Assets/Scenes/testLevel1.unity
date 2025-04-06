@@ -297,7 +297,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -5796,7 +5796,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -6355,7 +6355,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -6469,7 +6469,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -7119,7 +7119,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &102722572
 Transform:
   m_ObjectHideFlags: 0
@@ -8612,7 +8612,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -8851,7 +8851,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -9316,7 +9316,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -10071,7 +10071,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -10202,7 +10202,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -10333,7 +10333,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -10464,7 +10464,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -11607,7 +11607,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -12247,12 +12247,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.8870109, z: -0.46174863, w: 0}
+  m_LocalRotation: {x: -0, y: 0.8870109, z: -0.46174863, w: 0}
   m_LocalPosition: {x: 0.05, y: 38.08, z: 34.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 436611664}
   m_LocalEulerAnglesHint: {x: 55, y: 180, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
@@ -18893,7 +18893,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -19486,7 +19486,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -19564,7 +19564,7 @@ Transform:
   m_GameObject: {fileID: 428421374}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13, y: 1, z: -20}
+  m_LocalPosition: {x: -4.79, y: 1, z: -14.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -20141,6 +20141,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ae4ab6c86eacd54bad986706cd26acd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &436611663
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 436611664}
+  m_Layer: 0
+  m_Name: camBoom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &436611664
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436611663}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 330585546}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &437894913
 GameObject:
   m_ObjectHideFlags: 0
@@ -20227,7 +20259,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -20375,7 +20407,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -20696,7 +20728,7 @@ Transform:
   m_GameObject: {fileID: 457522133}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.26, y: 0.5, z: 8.41}
+  m_LocalPosition: {x: 1.0699995, y: 0.5, z: 3.8400006}
   m_LocalScale: {x: 3.3, y: 0.5, z: 3.3}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -26004,7 +26036,7 @@ Transform:
   m_GameObject: {fileID: 502242498}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13, y: 0.5, z: -20}
+  m_LocalPosition: {x: -4.790001, y: 0.5, z: -14.34}
   m_LocalScale: {x: 3.3, y: 0.5, z: 3.3}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -26672,117 +26704,97 @@ MonoBehaviour:
   - m_EditModeType: 1
     m_Knots:
     - Position:
-        x: -30.166513
+        x: -34.436512
         y: 0
-        z: 12.983702
+        z: 2.3537006
       TangentIn:
         x: -0
         y: -0
-        z: -2.4380543
+        z: -1.425877
       TangentOut:
         x: 0
         y: 0
-        z: 2.4380543
+        z: 1.425877
       Rotation:
         value:
-          x: -0.000000041479574
-          y: 0.88603806
-          z: 0.000000021703867
-          w: -0.46361262
+          x: -0.00000003338422
+          y: 0.71939766
+          z: 0.000000032233395
+          w: -0.6945984
     - Position:
-        x: -50.196514
+        x: -48.686512
         y: 0
-        z: -0.9162979
+        z: 1.8537006
       TangentIn:
         x: 0
         y: 0
-        z: -13.282257
+        z: -11.000768
       TangentOut:
         x: 0
         y: 0
-        z: 15.394248
+        z: 6.704575
       Rotation:
         value:
-          x: 0.000000039165883
-          y: 0.85109305
-          z: -0.000000024160315
-          w: -0.5250149
+          x: 0.000000031651947
+          y: 0.7112727
+          z: -0.000000031280084
+          w: -0.7029162
     - Position:
-        x: -68.09651
+        x: -65.48651
         y: 0
-        z: 19.083702
+        z: 9.523702
       TangentIn:
         x: 0
         y: 0
-        z: -10.427968
+        z: -8.0109
       TangentOut:
         x: 0
         y: 0
-        z: 11.700614
+        z: 10.411079
       Rotation:
         value:
-          x: 9.731832e-10
-          y: 0.23755746
-          z: 0.0000000039793497
-          w: 0.97137344
+          x: 3.036755e-11
+          y: 0.0074901814
+          z: 0.0000000040542014
+          w: 0.99997205
     - Position:
-        x: -38.576515
+        x: -43.456512
         y: 0
-        z: 22.373701
+        z: 29.063702
       TangentIn:
         x: 0
         y: 0
-        z: -8.351299
+        z: -11.310004
       TangentOut:
         x: 0
         y: 0
-        z: 5.0500894
+        z: 10.099396
       Rotation:
         value:
-          x: 1.3690849e-19
-          y: 0.23965278
-          z: 5.546308e-19
-          w: 0.97085863
+          x: 4.7920324e-22
+          y: -0.00044201274
+          z: -1.0841384e-18
+          w: 0.99999994
     - Position:
-        x: -44.196514
+        x: -66.756516
         y: 0
-        z: 37.2837
-      TangentIn:
-        x: 0
-        y: 0
-        z: -11.276421
-      TangentOut:
-        x: 0
-        y: 0
-        z: 9.935297
-      Rotation:
-        value:
-          x: 6.5471976e-19
-          y: -0.601754
-          z: -8.689806e-19
-          w: 0.79868156
-    - Position:
-        x: -74.79651
-        y: 0
-        z: 39.583702
+        z: 36.4037
       TangentIn:
         x: -0
         y: -0
-        z: -3.0686312
+        z: -2.442879
       TangentOut:
         x: 0
         y: 0
-        z: 3.0686312
+        z: 2.442879
       Rotation:
         value:
-          x: 7.265642e-19
-          y: -0.68009114
-          z: -7.8322486e-19
-          w: 0.7331276
+          x: 6.3068003e-19
+          y: -0.5914114
+          z: -8.599115e-19
+          w: 0.80637
     m_MetaData:
     - Mode: 0
-      Tension: 0.5
-    - Mode: 3
       Tension: 0.5
     - Mode: 3
       Tension: 0.5
@@ -26812,7 +26824,7 @@ Transform:
   m_GameObject: {fileID: 554961007}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 49.996513, y: -1, z: -19.383701}
+  m_LocalPosition: {x: 52.200516, y: -1, z: -22.8507}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27023,7 +27035,7 @@ GameObject:
   - component: {fileID: 568332272}
   - component: {fileID: 568332271}
   m_Layer: 0
-  m_Name: raodMarkerCube
+  m_Name: roadMarkerCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27296,7 +27308,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -27502,7 +27514,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -27633,7 +27645,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -32841,7 +32853,7 @@ Transform:
   m_GameObject: {fileID: 616868808}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: -24.04, y: -1, z: 20.18}
+  m_LocalPosition: {x: -12.865999, y: -1, z: 13.443001}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -33285,8 +33297,8 @@ Transform:
   - {fileID: 1171692358}
   - {fileID: 1050676060}
   - {fileID: 1789928154}
-  - {fileID: 1149833943}
   - {fileID: 457522134}
+  - {fileID: 1149833943}
   - {fileID: 1249444820}
   - {fileID: 707230166}
   - {fileID: 1426275300}
@@ -39280,7 +39292,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &707230166
 Transform:
   m_ObjectHideFlags: 0
@@ -39751,7 +39763,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -45267,7 +45279,7 @@ Transform:
   m_GameObject: {fileID: 769067171}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.856, y: 0, z: -6.141}
+  m_LocalPosition: {x: 17.7, y: 0, z: -20.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -52855,7 +52867,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -53814,7 +53826,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -53945,7 +53957,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -59359,7 +59371,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -60799,7 +60811,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1050676060
 Transform:
   m_ObjectHideFlags: 0
@@ -61197,7 +61209,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -61766,7 +61778,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1102772562
 Transform:
   m_ObjectHideFlags: 0
@@ -61776,7 +61788,7 @@ Transform:
   m_GameObject: {fileID: 1102772561}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.2, y: 0, z: 6.65}
+  m_LocalPosition: {x: 4.16, y: 0, z: -8.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -62079,7 +62091,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -62175,7 +62187,7 @@ Transform:
   m_GameObject: {fileID: 1109781857}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.1, y: 0, z: 16.14}
+  m_LocalPosition: {x: 9.5, y: 0, z: 12.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -68185,7 +68197,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1149833943
 Transform:
   m_ObjectHideFlags: 0
@@ -68804,7 +68816,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -69297,7 +69309,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1171692358
 Transform:
   m_ObjectHideFlags: 0
@@ -70111,7 +70123,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -70860,7 +70872,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1249444820
 Transform:
   m_ObjectHideFlags: 0
@@ -88356,7 +88368,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1426275300
 Transform:
   m_ObjectHideFlags: 0
@@ -88530,7 +88542,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -89281,7 +89293,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -94454,7 +94466,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -95073,7 +95085,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -95328,8 +95340,8 @@ Transform:
   - {fileID: 537471491}
   - {fileID: 769067172}
   - {fileID: 616868809}
-  - {fileID: 554961009}
   - {fileID: 568332274}
+  - {fileID: 554961009}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1521961793
@@ -96857,7 +96869,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -98750,7 +98762,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -98967,7 +98979,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -99031,7 +99043,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -99630,7 +99642,7 @@ Transform:
   m_GameObject: {fileID: 1789928153}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.31, y: 1, z: 8.419999}
+  m_LocalPosition: {x: 1.12, y: 1, z: 3.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -100041,7 +100053,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -105756,7 +105768,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -105918,7 +105930,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -112042,7 +112054,7 @@ Transform:
   m_GameObject: {fileID: 1935366447}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.54, y: 0, z: -14.39}
+  m_LocalPosition: {x: -12.81, y: 0, z: -19.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -113675,7 +113687,7 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 0
   m_Method: 1
-  m_Duration: 17.706749
+  m_Duration: 11.68218
   m_MaxSpeed: 8
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -115599,7 +115611,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 861977755}
-  - {fileID: 330585546}
+  - {fileID: 436611664}
   - {fileID: 410087041}
   - {fileID: 2132594983}
   - {fileID: 832575519}
