@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6848b5da1cfdf0841bd707a9f1d08c41, type: 3}
   m_Name: BasicEnemy
   m_EditorClassIdentifier: 
-  enemyName: Armored Enemy
+  enemyName: Basic Enemy
   enemyType: 1
-  hp: 30
-  speed: 5
+  hp: 12
+  speed: 4
   damage: 1
-  armor: 0.25
+  armor: 0
   magicResist: 0
-  coolDown: 0.5
-  cost: 20
-  meleeDamage: 5
+  coolDown: 0.25
+  cost: 10
+  meleeDamage: 3
   meleeCooldown: 1
   enemyIcon: {fileID: 0}
   enemyPrefab: {fileID: 0}

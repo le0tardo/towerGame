@@ -16,12 +16,12 @@ MonoBehaviour:
   enemyType: 1
   hp: 70
   speed: 3
-  damage: 2
+  damage: 1
   armor: 0
   magicResist: 0
   coolDown: 1
   cost: 25
-  meleeDamage: 25
-  meleeCooldown: 2
+  meleeDamage: 15
+  meleeCooldown: 1.5
   enemyIcon: {fileID: 0}
   enemyPrefab: {fileID: 0}

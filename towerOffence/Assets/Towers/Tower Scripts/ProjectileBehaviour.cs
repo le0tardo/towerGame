@@ -5,6 +5,7 @@ public class ProjectileBehaviour : MonoBehaviour
 {
     TowerBehaviour tower;
     [SerializeField] Transform spawnPos;
+    public GameObject targetObject;
     [SerializeField] float speed;
     [SerializeField] bool AOE = false;
     [SerializeField] float area;
@@ -36,13 +37,17 @@ public class ProjectileBehaviour : MonoBehaviour
         lerp = 0f;
         if (speed == 0) { speed = 1;} //om jag glöm
         if (area == 0) {  area = 1;}
-
     }
 
     private void Update()
     {
 
-        if (tower.currentTarget != null && tower.currentTarget.activeInHierarchy) { targetPos = tower.currentTarget.transform.position;}
+        //if (tower.currentTarget != null && tower.currentTarget.activeInHierarchy) { targetPos = tower.currentTarget.transform.position;}
+        //if (targetObject != null && targetObject.activeInHierarchy) { targetPos=targetObject.transform.position; }
+
+        //gets targetObject from tower behaviour script on spawn
+        if(targetObject!=null && targetObject.activeInHierarchy) {targetPos=targetObject.transform.position;}
+
         direction = targetPos - transform.position;
         transform.rotation = Quaternion.LookRotation(direction);
 
@@ -56,11 +61,10 @@ public class ProjectileBehaviour : MonoBehaviour
             {
                 lerp += arcSpeed * Time.deltaTime;
 
-                // Get arc direction using Slerp between start-forward and target direction
-                Vector3 midPoint = (startPos + targetPos) / 2 + Vector3.up * arcHeight; // raises midpoint to create arc height
+                Vector3 midPoint = (startPos + targetPos) / 2 + Vector3.up * arcHeight;
                 Vector3 pointA = Vector3.Lerp(startPos, midPoint, lerp);
                 Vector3 pointB = Vector3.Lerp(midPoint, targetPos, lerp);
-                transform.position = Vector3.Lerp(pointA, pointB, lerp); // Double lerp = arc
+                transform.position = Vector3.Lerp(pointA, pointB, lerp);
             }
         }
        
@@ -102,6 +106,12 @@ public class ProjectileBehaviour : MonoBehaviour
         if (AOE)
         {
             Gizmos.DrawWireSphere(transform.position, area);
+        }
+        if (targetPos != Vector3.zero)
+        {   
+            Gizmos.color = Color.red;
+            Vector3 boxSize = new Vector3(2, 2, 2);
+            Gizmos.DrawWireCube(targetPos,boxSize);
         }
     }
 

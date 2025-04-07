@@ -60,6 +60,8 @@ public class TowerBehaviour : MonoBehaviour
             currentTarget=null;
         }
 
+        if (currentTarget!=null && !currentTarget.activeInHierarchy) { potentialTargets.Remove(currentTarget); }
+
         if (currentTarget != null)
         {
             //rotate towards target
@@ -92,8 +94,7 @@ public class TowerBehaviour : MonoBehaviour
                 if (!projectiles[i].activeInHierarchy)
                 {
                     projectiles[i].SetActive(true);
-                    //ProjectileBehaviour pb = projectiles[i].GetComponent<ProjectileBehaviour>();
-
+                    projectiles[i].GetComponent<ProjectileBehaviour>().targetObject = currentTarget;
                     break;
                 }
             }

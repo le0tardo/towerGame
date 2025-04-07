@@ -131,11 +131,13 @@ public class EnemyBehaviour : MonoBehaviour
             case DamageType.Physical:
                 dmg *= 1f - enemyBase.armor;
                 dmg = Mathf.Max(dmg, 0);
+                dmg=Mathf.Floor(dmg);
                 break;
             case DamageType.Magical:
                 dmg *= 1f - enemyBase.magicResist;
                 dmg=Mathf.Max(dmg, 0);
-            break;
+                dmg = Mathf.Floor(dmg);
+                break;
             case DamageType.Elemental:
                 dmg = Mathf.Max(dmg, 0);
                 break;
