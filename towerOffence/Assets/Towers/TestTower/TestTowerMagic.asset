@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Magic Tower
   cost: 0
-  range: 15
+  range: 10
   speed: 2
   damage: 15
-  damageType: 0
+  damageType: 1
   elementType: 0
   icon: {fileID: 0}
   prefab: {fileID: 0}
