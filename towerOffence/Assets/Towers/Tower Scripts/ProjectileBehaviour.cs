@@ -78,9 +78,9 @@ public class ProjectileBehaviour : MonoBehaviour
 
     void HitEnemy()
     {
-        if (tower.currentTarget != null)
+        if (targetObject != null)
         {
-            EnemyBehaviour eh=tower.currentTarget.GetComponent<EnemyBehaviour>();
+            EnemyBehaviour eh=targetObject.GetComponent<EnemyBehaviour>();
             eh.TakeDamage(damage, damageType, elementType, effectDuration);
         }
         FXPool.Instance.SpawnFX(transform.position);

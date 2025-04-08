@@ -16,7 +16,7 @@ MonoBehaviour:
   cost: 0
   range: 10
   speed: 2
-  damage: 15
+  damage: 30
   damageType: 1
   elementType: 0
   icon: {fileID: 0}

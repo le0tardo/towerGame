@@ -30,33 +30,45 @@ public class TrapBehaviour : MonoBehaviour
     }
     private void Update()
     {
-
-        if (enemies.Count > 0) { coolDown -= Time.deltaTime; }
-        
-        if (coolDown <= 0)
+        if (enemies.Count > 0)
         {
-            if (!singleUse) { 
-                foreach (GameObject enemy in enemies)
-                {
-                    if (damage <= 0) { return; }if (!enemy.activeInHierarchy) { return;}
-
-                    float spd = enemy.GetComponent<EnemyBehaviour>().enemyBase.speed; //idea, deals more damage to slower enemies!?
-                    float dmg = damage;
-                    dmg=(dmg-spd); if (dmg < 1) { dmg = 1;}
-                    //Debug.Log("trap base damag is: "+trapBase.damage +" enemy speed is "+ spd +". new damage is "+ dmg);
-                    if (dmg > 0) { enemy.GetComponent<EnemyBehaviour>().TakeDamage(dmg, damageType, elementType, 0); }
-                    //stupid idea?
-                    //enemy.GetComponent<EnemyBehaviour>().TakeDamage(dmg, damageType, elementType, 0);
-
-                }
-                 coolDown = maxCoolDown;
-            }
-            else
+            coolDown -= Time.deltaTime;
+            if (coolDown <= 0)
             {
-                Explode();
+                coolDown = maxCoolDown;
+
+                if (!singleUse)
+                {
+                    foreach (GameObject enemy in enemies)
+                    {
+                        if (damage <= 0 || !enemy.activeInHierarchy) { continue; } // Skip invalid enemies
+
+                        float spd = enemy.GetComponent<EnemyBehaviour>().enemyBase.speed;
+                        spd *= 2; // Deals more damage to slower enemies
+
+                        float dmg = damage - spd; // Calculate damage reduction
+                        if (dmg < 1) { dmg = 1; } // Minimum damage
+
+                        enemy.GetComponent<EnemyBehaviour>().TakeDamage(dmg, damageType, elementType, 0);
+                    }
+                }
+                else
+                {
+                    Explode();
+                }
             }
+
+            for (int i = 0; i < enemies.Count; i++)
+            {
+                if (!enemies[i].activeInHierarchy)
+                {
+                    enemies.Remove(enemies[i]);
+                }
+            }
+
         }
     }
+
 
     void Explode()
     {
