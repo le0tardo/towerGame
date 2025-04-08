@@ -16,4 +16,15 @@ public class NextSceneButton : MonoBehaviour
             Debug.LogWarning("No more levels yet lol!");
         }
     }
+
+    public void RestartScene()
+    {
+        Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
+    }
+
+    public void LoadMapLevel()
+    {
+        //SceneManager.LoadScene("mapScene");
+    }
+
 }

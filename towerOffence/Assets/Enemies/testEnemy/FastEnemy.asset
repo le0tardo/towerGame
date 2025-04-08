@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6848b5da1cfdf0841bd707a9f1d08c41, type: 3}
   m_Name: FastEnemy
   m_EditorClassIdentifier: 
-  enemyName: Fast Enemy
+  enemyName: Fast Minion
   enemyType: 1
   hp: 25
   speed: 6
