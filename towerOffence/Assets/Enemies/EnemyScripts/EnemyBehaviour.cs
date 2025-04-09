@@ -53,6 +53,11 @@ public class EnemyBehaviour : MonoBehaviour
         inCombat = false;
         anim?.Play();
 
+        float spawnPoint=GameManager.instance.spawnSplinePoint;
+        //anim.NormalizedTime = nt;
+        //Debug.Log(anim.StartOffset);
+        //anim.StartOffset = spawnPoint;
+
         //offset graphics element, animator+transform.position.x
     }
 

@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [Header("Level Stats")]
     public int waves;
     public int gateHp;
+    public float spawnSplinePoint;
     
     [Header("Object references")]
     ManaManager mana;
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
         instance = this;
         if (waves != 0) maxWaves = waves;
         if (gateHp!=0)gate.gateHealth = gateHp;
+        spawnSplinePoint = 0f;
         Time.timeScale = 1.0f;
     }
     private void Start()
