@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Splines;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class GameManager : MonoBehaviour
     ManaManager mana;
     [SerializeField] Gate gate;
     [SerializeField] PortalBehaviour portal;
+    [SerializeField] public SplineContainer levelPathContainer;
+    [SerializeField] public Spline levelPathSpline;
 
     [Header("Object Variables")]
     public int wave = 1;

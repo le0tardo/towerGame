@@ -21,11 +21,12 @@ public class EnemyBehaviour : MonoBehaviour
     public GameObject myTarget = null;
     bool frozen = false;
 
-    private void Start()
+    private void Awake()
     {
         anim = GetComponent<SplineAnimate>();
-        anim.MaxSpeed = enemyBase.speed;
-        //if (anim.Container == null) { anim.Container}
+
+        //anim.Container = GameManager.instance.levelPathContainer; <- set from one place, smarter!
+        Debug.Log(anim.Container);
 
         enemyType = enemyBase.enemyType;
         switch (enemyType)
@@ -51,14 +52,11 @@ public class EnemyBehaviour : MonoBehaviour
         maxHp = hp;
         damage = enemyBase.damage;
         inCombat = false;
-        anim?.Play();
 
         float spawnPoint=GameManager.instance.spawnSplinePoint;
-        //anim.NormalizedTime = nt;
-        //Debug.Log(anim.StartOffset);
-        //anim.StartOffset = spawnPoint;
-
-        //offset graphics element, animator+transform.position.x
+        anim.StartOffset = spawnPoint;
+        anim.MaxSpeed = enemyBase.speed;
+        anim?.Play();
     }
 
     private void Update()
