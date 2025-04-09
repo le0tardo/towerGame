@@ -24,9 +24,7 @@ public class EnemyBehaviour : MonoBehaviour
     private void Awake()
     {
         anim = GetComponent<SplineAnimate>();
-
-        //anim.Container = GameManager.instance.levelPathContainer; <- set from one place, smarter!
-        Debug.Log(anim.Container);
+        // if container is null: anim.Container = GameManager.instance.levelPathContainer; <- set from one place, smarter!
 
         enemyType = enemyBase.enemyType;
         switch (enemyType)
