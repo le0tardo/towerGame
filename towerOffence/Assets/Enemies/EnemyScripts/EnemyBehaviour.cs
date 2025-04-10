@@ -22,10 +22,20 @@ public class EnemyBehaviour : MonoBehaviour
     public GameObject myTarget = null;
     bool frozen = false;
 
+    [SerializeField] GameObject graphics;
+
     private void Awake()
     {
         anim = GetComponent<SplineAnimate>();
         // if container is null: anim.Container = GameManager.instance.levelPathContainer; <- set from one place, smarter!
+
+        //graphis offset
+
+        if (graphics != null) {
+            float[] ra = { -0.33f, 0f, 0.33f };
+            float r = ra[Random.Range(0, ra.Length)];
+            graphics.transform.position = new Vector3(graphics.transform.position.x + r, graphics.transform.position.y, graphics.transform.position.z); //reset this to 0 at disable!!
+        }
 
         enemyType = enemyBase.enemyType;
         switch (enemyType)
