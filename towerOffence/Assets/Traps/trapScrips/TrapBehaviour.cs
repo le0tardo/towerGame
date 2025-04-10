@@ -96,11 +96,13 @@ public class TrapBehaviour : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
+            if (other.gameObject.GetComponent<EnemyBehaviour>().flying) {return;}
+
             enemies.Add(other.gameObject);
 
             if (elementType == ElementType.Ice)
             {
-                other.gameObject.GetComponent<EnemyBehaviour>().Freeze(10f); //overkill, but resets on triggerExit
+                other.gameObject.GetComponent<EnemyBehaviour>().Freeze(10f);
             }
         }
     }

@@ -5,6 +5,7 @@ using TMPro;
 public class SpawnButton : MonoBehaviour
 {
     [SerializeField] EnemyBase enemyToSpawn;
+    [SerializeField] EnemyPool enemyPool;
     [SerializeField] ManaManager manaManager;
     [SerializeField] KeyCode key;
     Button button;
@@ -65,6 +66,11 @@ public class SpawnButton : MonoBehaviour
         }
     }
 
+    public void SpawnFromPool()
+    {
+        enemyPool.SpawnEnemy();
+        CoolDown();
+    }
     public void CoolDown()
     {
         hasCooledDown = false;

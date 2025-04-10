@@ -11,6 +11,7 @@ public class EnemyBehaviour : MonoBehaviour
     float p;
     public float damage;
     EnemyType enemyType;
+    public bool flying = false;
     [SerializeField] float fireMod=1;
 
     [SerializeField] Canvas canvas;
