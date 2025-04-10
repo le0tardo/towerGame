@@ -10,6 +10,7 @@ public class TrapBehaviour : MonoBehaviour
     float maxCoolDown;
 
     public bool singleUse = false;
+    public bool animated = false;
     public List<GameObject> enemies = new List<GameObject>();
     DamageType damageType;
     ElementType elementType;
@@ -32,25 +33,14 @@ public class TrapBehaviour : MonoBehaviour
     {
         if (enemies.Count > 0)
         {
-            coolDown -= Time.deltaTime;
+            if (!animated) { coolDown -= Time.deltaTime; }
             if (coolDown <= 0)
             {
                 coolDown = maxCoolDown;
 
                 if (!singleUse)
                 {
-                    foreach (GameObject enemy in enemies)
-                    {
-                        if (damage <= 0 || !enemy.activeInHierarchy) { continue; } // Skip invalid enemies
-
-                        float spd = enemy.GetComponent<EnemyBehaviour>().enemyBase.speed;
-                        spd *= 2; // Deals more damage to slower enemies
-
-                        float dmg = damage - spd; // Calculate damage reduction
-                        if (dmg < 1) { dmg = 1; } // Minimum damage
-
-                        enemy.GetComponent<EnemyBehaviour>().TakeDamage(dmg, damageType, elementType, 0);
-                    }
+                    DealTrapDamage();
                 }
                 else
                 {
@@ -68,8 +58,21 @@ public class TrapBehaviour : MonoBehaviour
 
         }
     }
+    public void DealTrapDamage()
+    {
+        if (enemies.Count <= 0) { return; }
+        foreach (GameObject enemy in enemies)
+        {
+            if (damage <= 0 || !enemy.activeInHierarchy) { continue; }
 
+            float ehp = enemy.GetComponent<EnemyBehaviour>().enemyBase.hp;
+            float dmg = ehp * trapBase.fractionDamage;
+            dmg = Mathf.Max(dmg, 1f);
+            dmg = Mathf.Floor(dmg);//Debug.Log("enemy max hp: " + ehp + ". Trap fraction damage: " + trapBase.fractionDamage + ". Damage dealt: " + dmg);
 
+            enemy.GetComponent<EnemyBehaviour>().TakeDamage(dmg, damageType, elementType, 0);
+        }
+    }
     void Explode()
     {
         Collider[] hitEnemies = Physics.OverlapSphere(transform.position, area, enemyLayer);

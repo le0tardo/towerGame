@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: testTrapSpike
   m_EditorClassIdentifier: 
   trapName: Spike Trap
-  damage: 10
-  coolDown: 0.5
+  damage: 25
+  fractionDamage: 0.2
+  coolDown: 99
   area: 0
   damageType: 0
   elementType: 0

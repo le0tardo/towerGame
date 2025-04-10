@@ -6,6 +6,7 @@ public class TrapBase : ScriptableObject
     [Header("Trap Stats")]
     public string trapName;
     public float damage;
+    public float fractionDamage;
     public float coolDown;
     public float area;
     public DamageType damageType;
