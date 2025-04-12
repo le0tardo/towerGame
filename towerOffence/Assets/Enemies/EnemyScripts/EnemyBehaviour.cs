@@ -28,6 +28,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         anim = GetComponent<SplineAnimate>();
         // if container is null: anim.Container = GameManager.instance.levelPathContainer; <- set from one place, smarter!
+        if (anim.Container == null) { anim.Container=GameManager.instance.levelPathContainer; }
 
         //graphis offset
 

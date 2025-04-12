@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] Gate gate;
     [SerializeField] PortalBehaviour portal;
     [SerializeField] public SplineContainer levelPathContainer;
-    [SerializeField] public Spline levelPathSpline;
 
     [Header("Object Variables")]
     public int wave = 1;
