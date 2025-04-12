@@ -8,7 +8,7 @@ public class MultiPortalBehaviour : MonoBehaviour
     public float pathProgression = 0; 
     [SerializeField] GameObject portalMarker;
     [SerializeField] Animator portalAnim;
-    [SerializeField] GameObject previousPortal;
+    [SerializeField] MultiPortalBehaviour previousPortal;
 
     [Header("Visuals")]
     [SerializeField] GameObject meshObject;
@@ -23,6 +23,36 @@ public class MultiPortalBehaviour : MonoBehaviour
     {
         mesh=meshObject.GetComponent<MeshRenderer>();
         UpdateVisuals();
+    }
+
+    private void OnMouseDown()
+    {
+        if (!claimed || dead) { return;}
+
+        GameManager.instance.levelPathContainer = path;
+        GameManager.instance.spawnSplinePoint = pathProgression;
+
+        if (portalMarker != null)
+        {
+            portalMarker.transform.position = this.gameObject.transform.position;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy") && !claimed)
+        {
+            float p = other.gameObject.GetComponent<SplineAnimate>().NormalizedTime;
+            pathProgression = p;
+
+            if (GameManager.instance.levelPathContainer == previousPortal.path)
+            {
+                GameManager.instance.spawnSplinePoint = p;
+            }
+            claimed = true;
+            UpdateVisuals();
+            if (previousPortal != null) { previousPortal.dead = true;previousPortal.UpdateVisuals(); }
+        }
     }
 
     private void UpdateVisuals()
