@@ -45,10 +45,16 @@ public class MultiPortalBehaviour : MonoBehaviour
             float p = other.gameObject.GetComponent<SplineAnimate>().NormalizedTime;
             pathProgression = p;
 
-            if (GameManager.instance.levelPathContainer == previousPortal.path)
+            if (GameManager.instance.levelPathContainer == path)
             {
                 GameManager.instance.spawnSplinePoint = p;
+
+                if (portalMarker != null)
+                {
+                    portalMarker.transform.position = this.gameObject.transform.position;
+                }
             }
+
             claimed = true;
             UpdateVisuals();
             if (previousPortal != null) { previousPortal.dead = true;previousPortal.UpdateVisuals(); }

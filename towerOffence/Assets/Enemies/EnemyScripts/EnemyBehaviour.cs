@@ -63,6 +63,7 @@ public class EnemyBehaviour : MonoBehaviour
         damage = enemyBase.damage;
         inCombat = false;
 
+        anim.Container = GameManager.instance.levelPathContainer;
         float spawnPoint=GameManager.instance.spawnSplinePoint;
         anim.StartOffset = spawnPoint;
         anim.MaxSpeed = enemyBase.speed;
