@@ -319,12 +319,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: a7e2de461dc0b804bb1043bd789c0f93, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 922787834}
   health: {fileID: 1238064403}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!1 &15057819
 GameObject:
   m_ObjectHideFlags: 0
@@ -6067,12 +6069,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: d76e6cebd4a3f074f8d7c3ca792decf1, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 476525084}
   health: {fileID: 18132086}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!1 &56034342
 GameObject:
   m_ObjectHideFlags: 0
@@ -11598,12 +11602,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: d76e6cebd4a3f074f8d7c3ca792decf1, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 1393359561}
   health: {fileID: 965168301}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!1 &71618107
 GameObject:
   m_ObjectHideFlags: 0
@@ -11712,12 +11718,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: eb7c007489692104ba594db97e9ab34a, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 400979866}
   health: {fileID: 1681157457}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!4 &71618112
 Transform:
   m_ObjectHideFlags: 0
@@ -13801,6 +13809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyToSpawn: {fileID: 11400000, guid: ea11fdcb2c0a91d49b88054039c6dda4, type: 2}
+  enemyPool: {fileID: 0}
   manaManager: {fileID: 861977756}
   key: 49
   manaText: {fileID: 0}
@@ -14080,12 +14089,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: a7e2de461dc0b804bb1043bd789c0f93, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 2099433476}
   health: {fileID: 30715271}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!1001 &175023407
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14319,12 +14330,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: ea11fdcb2c0a91d49b88054039c6dda4, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 434939013}
   health: {fileID: 817820600}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!1 &181741311
 GameObject:
   m_ObjectHideFlags: 0
@@ -14976,12 +14989,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: d76e6cebd4a3f074f8d7c3ca792decf1, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 1013597556}
   health: {fileID: 811102802}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!1 &202714933
 GameObject:
   m_ObjectHideFlags: 0
@@ -15763,12 +15778,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: eb7c007489692104ba594db97e9ab34a, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 1521961798}
   health: {fileID: 1824142656}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!1 &237812333
 GameObject:
   m_ObjectHideFlags: 0
@@ -16002,12 +16019,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: d76e6cebd4a3f074f8d7c3ca792decf1, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 1564169446}
   health: {fileID: 582839776}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!1 &241780861
 GameObject:
   m_ObjectHideFlags: 0
@@ -16133,12 +16152,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: d76e6cebd4a3f074f8d7c3ca792decf1, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 319427376}
   health: {fileID: 1925588201}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!1 &269545300
 GameObject:
   m_ObjectHideFlags: 0
@@ -16264,12 +16285,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: d76e6cebd4a3f074f8d7c3ca792decf1, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 308036058}
   health: {fileID: 153762888}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!1 &276680580
 GameObject:
   m_ObjectHideFlags: 0
@@ -17517,12 +17540,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: d76e6cebd4a3f074f8d7c3ca792decf1, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 1599758242}
   health: {fileID: 1704453428}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!1 &316722644
 GameObject:
   m_ObjectHideFlags: 0
@@ -25106,12 +25131,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: d76e6cebd4a3f074f8d7c3ca792decf1, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 453097811}
   health: {fileID: 656896385}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!1 &400979861
 GameObject:
   m_ObjectHideFlags: 0
@@ -26003,12 +26030,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: a7e2de461dc0b804bb1043bd789c0f93, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 1120678818}
   health: {fileID: 928152095}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!1 &425481880
 GameObject:
   m_ObjectHideFlags: 0
@@ -27067,12 +27096,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: eb7c007489692104ba594db97e9ab34a, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 300233913}
   health: {fileID: 1152988937}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!4 &437894918
 Transform:
   m_ObjectHideFlags: 0
@@ -27215,12 +27246,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: eb7c007489692104ba594db97e9ab34a, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 1089917910}
   health: {fileID: 3726852}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!1 &447279232
 GameObject:
   m_ObjectHideFlags: 0
@@ -34621,12 +34654,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: d76e6cebd4a3f074f8d7c3ca792decf1, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 432628284}
   health: {fileID: 1295614418}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!1 &582839774
 GameObject:
   m_ObjectHideFlags: 0
@@ -34827,12 +34862,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: eb7c007489692104ba594db97e9ab34a, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 2087438259}
   health: {fileID: 1967400538}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!1 &592001532
 GameObject:
   m_ObjectHideFlags: 0
@@ -34958,12 +34995,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: d76e6cebd4a3f074f8d7c3ca792decf1, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 1717323473}
   health: {fileID: 456699737}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!1 &597319048
 GameObject:
   m_ObjectHideFlags: 0
@@ -47461,12 +47500,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: d76e6cebd4a3f074f8d7c3ca792decf1, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 1029279511}
   health: {fileID: 330755256}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!1 &727280239
 GameObject:
   m_ObjectHideFlags: 0
@@ -53141,6 +53182,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dbdfd21d2796b94a99cf2e571648aee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  path: {fileID: 0}
+  pathProgression: 0
+  portalMarker: {fileID: 0}
   portalAnim: {fileID: 1101976772}
 --- !u!65 &769067174
 BoxCollider:
@@ -60598,8 +60642,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves: 1
   gateHp: 3
+  spawnSplinePoint: 0
   gate: {fileID: 616868811}
   portal: {fileID: 769067173}
+  levelPathContainer: {fileID: 554961008}
   wave: 1
   maxWaves: 1
   enemyCount: 0
@@ -60755,6 +60801,7 @@ MonoBehaviour:
   trapBase: {fileID: 11400000, guid: f3e330c76703dd04db61baa69cbd16ce, type: 2}
   coolDown: 0
   singleUse: 1
+  animated: 0
   enemies: []
   enemyLayer:
     serializedVersion: 2
@@ -61124,12 +61171,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: a7e2de461dc0b804bb1043bd789c0f93, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 796091985}
   health: {fileID: 1002442349}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!1 &893964765
 GameObject:
   m_ObjectHideFlags: 0
@@ -62175,12 +62224,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: eb7c007489692104ba594db97e9ab34a, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 1116970420}
   health: {fileID: 1254174220}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!4 &937863757
 Transform:
   m_ObjectHideFlags: 0
@@ -62306,12 +62357,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: eb7c007489692104ba594db97e9ab34a, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 383607020}
   health: {fileID: 476506935}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!4 &941123972
 Transform:
   m_ObjectHideFlags: 0
@@ -67951,12 +68004,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: d76e6cebd4a3f074f8d7c3ca792decf1, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 2071680905}
   health: {fileID: 1156777343}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!1 &987795638
 GameObject:
   m_ObjectHideFlags: 0
@@ -68132,6 +68187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyToSpawn: {fileID: 11400000, guid: d76e6cebd4a3f074f8d7c3ca792decf1, type: 2}
+  enemyPool: {fileID: 0}
   manaManager: {fileID: 861977756}
   key: 51
   manaText: {fileID: 0}
@@ -69989,12 +70045,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: d76e6cebd4a3f074f8d7c3ca792decf1, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 1127698144}
   health: {fileID: 1529524659}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!1 &1075224024
 GameObject:
   m_ObjectHideFlags: 0
@@ -70871,12 +70929,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: d76e6cebd4a3f074f8d7c3ca792decf1, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 122745868}
   health: {fileID: 383737201}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!1 &1109781857
 GameObject:
   m_ObjectHideFlags: 0
@@ -77597,12 +77657,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: eb7c007489692104ba594db97e9ab34a, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 1163825359}
   health: {fileID: 1330361099}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!1 &1165878252
 GameObject:
   m_ObjectHideFlags: 0
@@ -77934,6 +77996,7 @@ MonoBehaviour:
   trapBase: {fileID: 11400000, guid: a28bbd1943eabc24bb8765d5aac2cecb, type: 2}
   coolDown: 0
   singleUse: 0
+  animated: 0
   enemies: []
   enemyLayer:
     serializedVersion: 2
@@ -79179,12 +79242,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: d76e6cebd4a3f074f8d7c3ca792decf1, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 811645080}
   health: {fileID: 745678995}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!1 &1197127316
 GameObject:
   m_ObjectHideFlags: 0
@@ -82138,6 +82203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyToSpawn: {fileID: 11400000, guid: eb7c007489692104ba594db97e9ab34a, type: 2}
+  enemyPool: {fileID: 0}
   manaManager: {fileID: 861977756}
   key: 50
   manaText: {fileID: 0}
@@ -98277,12 +98343,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: ea11fdcb2c0a91d49b88054039c6dda4, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 511667266}
   health: {fileID: 1894808325}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!1 &1433159339
 GameObject:
   m_ObjectHideFlags: 0
@@ -99028,12 +99096,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: d76e6cebd4a3f074f8d7c3ca792decf1, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 1075224029}
   health: {fileID: 1887132013}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!1 &1455398994
 GameObject:
   m_ObjectHideFlags: 0
@@ -104385,12 +104455,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: ea11fdcb2c0a91d49b88054039c6dda4, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 308306413}
   health: {fileID: 1979740085}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!1 &1477666601
 GameObject:
   m_ObjectHideFlags: 0
@@ -104891,6 +104963,7 @@ MonoBehaviour:
   trapBase: {fileID: 11400000, guid: bb4f230914e0e0442a37f881fea13527, type: 2}
   coolDown: 0
   singleUse: 0
+  animated: 0
   enemies: []
   enemyLayer:
     serializedVersion: 2
@@ -105005,12 +105078,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: eb7c007489692104ba594db97e9ab34a, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 294527941}
   health: {fileID: 618259489}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!4 &1504940030
 Transform:
   m_ObjectHideFlags: 0
@@ -105320,6 +105395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyToSpawn: {fileID: 11400000, guid: a7e2de461dc0b804bb1043bd789c0f93, type: 2}
+  enemyPool: {fileID: 0}
   manaManager: {fileID: 861977756}
   key: 51
   manaText: {fileID: 0}
@@ -107046,12 +107122,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: a7e2de461dc0b804bb1043bd789c0f93, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 655233025}
   health: {fileID: 864618595}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!1 &1618645963
 GameObject:
   m_ObjectHideFlags: 0
@@ -109444,12 +109522,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: d76e6cebd4a3f074f8d7c3ca792decf1, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 1045296692}
   health: {fileID: 1613907564}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!1 &1758146393
 GameObject:
   m_ObjectHideFlags: 0
@@ -109661,12 +109741,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: d76e6cebd4a3f074f8d7c3ca792decf1, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 787134866}
   health: {fileID: 2048694923}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!1 &1765617989
 GameObject:
   m_ObjectHideFlags: 0
@@ -109792,12 +109874,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: ea11fdcb2c0a91d49b88054039c6dda4, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 845259257}
   health: {fileID: 29736471}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!1 &1768202819
 GameObject:
   m_ObjectHideFlags: 0
@@ -110908,12 +110992,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: eb7c007489692104ba594db97e9ab34a, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 1876875936}
   health: {fileID: 1946632758}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!1 &1817922420
 GameObject:
   m_ObjectHideFlags: 0
@@ -116624,12 +116710,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: d76e6cebd4a3f074f8d7c3ca792decf1, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 78103153}
   health: {fileID: 1183160377}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!1 &1866407813
 GameObject:
   m_ObjectHideFlags: 0
@@ -116894,12 +116982,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: d76e6cebd4a3f074f8d7c3ca792decf1, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 541162414}
   health: {fileID: 118319981}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!1 &1876875931
 GameObject:
   m_ObjectHideFlags: 0
@@ -125370,12 +125460,14 @@ MonoBehaviour:
   enemyBase: {fileID: 11400000, guid: ea11fdcb2c0a91d49b88054039c6dda4, type: 2}
   hp: 0
   damage: 0
+  flying: 0
   fireMod: 1
   canvas: {fileID: 2109638306}
   health: {fileID: 1439595055}
   anim: {fileID: 0}
   inCombat: 0
   myTarget: {fileID: 0}
+  graphics: {fileID: 0}
 --- !u!1 &2048694921
 GameObject:
   m_ObjectHideFlags: 0

@@ -26942,6 +26942,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1897673104540312461, guid: 1b8d0fca070a44c419e9b6e42f4b25b3, type: 3}
+      propertyPath: mainPortal
+      value: 
+      objectReference: {fileID: 769067173}
+    - target: {fileID: 1897673104540312461, guid: 1b8d0fca070a44c419e9b6e42f4b25b3, type: 3}
+      propertyPath: portalMarker
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8664976529391489862, guid: 1b8d0fca070a44c419e9b6e42f4b25b3, type: 3}
       propertyPath: m_Name
       value: portalPoint
@@ -44934,6 +44942,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dbdfd21d2796b94a99cf2e571648aee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  path: {fileID: 0}
+  pathProgression: 0
+  portalMarker: {fileID: 0}
   portalAnim: {fileID: 1101976772}
 --- !u!65 &769067174
 BoxCollider:
@@ -51724,20 +51735,7 @@ MonoBehaviour:
   spawnSplinePoint: 0
   gate: {fileID: 616868811}
   portal: {fileID: 769067173}
-  levelPathContainer: {fileID: 0}
-  levelPathSpline:
-    m_EditModeType: 1
-    m_Knots: []
-    m_MetaData: []
-    m_Closed: 0
-    m_IntData:
-      m_Data: []
-    m_FloatData:
-      m_Data: []
-    m_Float4Data:
-      m_Data: []
-    m_ObjectData:
-      m_Data: []
+  levelPathContainer: {fileID: 554961008}
   wave: 1
   maxWaves: 3
   enemyCount: 0
