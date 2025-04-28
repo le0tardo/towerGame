@@ -11385,6 +11385,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 214297193}
   tower: {fileID: 1432509603}
+  triggerDelay: 0.1
 --- !u!1 &218691163
 GameObject:
   m_ObjectHideFlags: 0
@@ -24141,6 +24142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerBase: {fileID: 11400000, guid: 66587d1b20340c84d86f347e3dca15e4, type: 2}
+  range: 0
   coolDown: 0
   damage: 0
   projectiles:
@@ -73773,6 +73775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerBase: {fileID: 11400000, guid: fb8dbe2f4ae071a46aa46c613c04aab5, type: 2}
+  range: 0
   coolDown: 0
   damage: 0
   projectiles:
@@ -82583,6 +82586,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerBase: {fileID: 11400000, guid: 0f198fe10d4b38a4283953088d7e2341, type: 2}
+  range: 0
   coolDown: 0
   damage: 0
   projectiles:
@@ -83996,6 +84000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerBase: {fileID: 11400000, guid: a1b3598ab6e21434eaa2657dfa568dae, type: 2}
+  range: 0
   coolDown: 0
   damage: 0
   projectiles:
@@ -106199,6 +106204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerBase: {fileID: 11400000, guid: 66587d1b20340c84d86f347e3dca15e4, type: 2}
+  range: 0
   coolDown: 0
   damage: 0
   projectiles:
@@ -118813,6 +118819,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1667344845}
   m_CullTransparentMesh: 1
+--- !u!1 &1668764131
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1668764132}
+  - component: {fileID: 1668764133}
+  m_Layer: 0
+  m_Name: rangeGfx
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1668764132
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668764131}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1775167688}
+  m_Father: {fileID: 2071903673}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1668764133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668764131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a29a70b9108e1b44bca964b0dc0717e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tower: {fileID: 1432509603}
+  decal: {fileID: 1775167689}
 --- !u!1 &1673511053
 GameObject:
   m_ObjectHideFlags: 0
@@ -121336,6 +121389,62 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3976be0a718ca884081fa3ec40fc1f9d, type: 3}
   m_PrefabInstance: {fileID: 1774791344}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1775167687
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1775167688}
+  - component: {fileID: 1775167689}
+  m_Layer: 0
+  m_Name: Decal Projector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1775167688
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775167687}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.70710576, y: -0, z: -0, w: 0.70710784}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1668764132}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &1775167689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775167687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: 33b025ad05d49cb43892c47d61332c60, type: 2}
+  m_DrawDistance: 1000
+  m_FadeScale: 0.9
+  m_StartAngleFade: 180
+  m_EndAngleFade: 180
+  m_UVScale: {x: 1, y: 1}
+  m_UVBias: {x: 0, y: 0}
+  m_DecalLayerMask: 1
+  m_ScaleMode: 0
+  m_Offset: {x: 0, y: 0, z: 0}
+  m_Size: {x: 16, y: 16, z: 8}
+  m_FadeFactor: 1
 --- !u!1 &1776475068
 GameObject:
   m_ObjectHideFlags: 0
@@ -121886,6 +121995,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerBase: {fileID: 11400000, guid: bfc75ba893a2f0a4aaab5593ae5d007c, type: 2}
+  range: 0
   coolDown: 0
   damage: 0
   projectiles:
@@ -141042,6 +141152,7 @@ Transform:
   m_Children:
   - {fileID: 1389847253}
   - {fileID: 1432509604}
+  - {fileID: 1668764132}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2073209474

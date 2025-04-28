@@ -6,7 +6,7 @@ using TMPro;
 public class TowerBehaviour : MonoBehaviour
 {
     [SerializeField] TowerBase towerBase;
-    float range;
+    public float range;
     float speed;
     public float coolDown;
     public float damage;
