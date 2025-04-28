@@ -8,7 +8,7 @@ public class TowerBehaviour : MonoBehaviour
     [SerializeField] TowerBase towerBase;
     float range;
     float speed;
-    float coolDown;
+    public float coolDown;
     public float damage;
     public GameObject[] projectiles;
 
