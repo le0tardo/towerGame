@@ -8,17 +8,14 @@ public class DecalRange : MonoBehaviour
 
     private void Start()
     {
-        if (tower == null)
+        if (tower != null)
         {
-            decal.size = new Vector3(tower.range,tower.range,decal.size.z);
+            decal.size = new Vector3(tower.range*2,tower.range*2,decal.size.z);
         }
     }
 
-    private void Update()
+    private void OnEnable()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            decal.size = new Vector3(tower.range, tower.range, decal.size.z);
-        }
+        decal.size = new Vector3(tower.range * 2, tower.range * 2, decal.size.z);
     }
 }

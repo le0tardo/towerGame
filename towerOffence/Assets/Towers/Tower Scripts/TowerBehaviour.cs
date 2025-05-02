@@ -18,9 +18,10 @@ public class TowerBehaviour : MonoBehaviour
     CapsuleCollider rangeTrigger;
 
     [Header("Tower Canvas")]
+    [SerializeField] GameObject toggleUI;
     [SerializeField] TMP_Text towerName;
     [SerializeField] Image coolDownFill;
-
+    bool clickedOn=false;
 
     private void Start()
     {
@@ -33,6 +34,7 @@ public class TowerBehaviour : MonoBehaviour
         rangeTrigger = GetComponent<CapsuleCollider>();
         rangeTrigger.radius = range;
         towerName.text = towerBase.towerName;
+        ToggleUI(); //<- last
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -85,6 +87,24 @@ public class TowerBehaviour : MonoBehaviour
         }
     }
 
+
+    private void OnMouseDown()
+    {
+        if (!clickedOn) { clickedOn=true; } else { clickedOn=false; }
+        ToggleUI();
+    }
+
+    void ToggleUI()
+    {
+        if (clickedOn)
+        {
+            toggleUI.SetActive(true);
+        }
+        else
+        {
+            toggleUI.SetActive(false);
+        }
+    }
     void Fire()
     {
         if (currentTarget != null)

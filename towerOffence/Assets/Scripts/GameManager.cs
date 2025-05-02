@@ -15,7 +15,8 @@ public class GameManager : MonoBehaviour
     [Header("Object references")]
     ManaManager mana;
     [SerializeField] Gate gate;
-    [SerializeField] PortalBehaviour portal;
+    [SerializeField] public GameObject currentPortal;
+    [SerializeField] GameObject portalVFX;
     [SerializeField] public SplineContainer levelPathContainer;
 
     [Header("Object Variables")]
@@ -41,6 +42,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         mana =GetComponent<ManaManager>();
+        if (currentPortal != null) { SetPortalVFX();}
     }
 
     private void Update()
@@ -86,7 +88,13 @@ public class GameManager : MonoBehaviour
             if (loseObject.activeInHierarchy) { loseObject.SetActive(false); }
             Time.timeScale = 0;
         }
-
     }
  
+    public void SetPortalVFX()
+    {
+        portalVFX.transform.position=currentPortal.transform.position;
+        portalVFX.transform.rotation=currentPortal.transform.rotation;
+        Animator portalVfxAnim= portalVFX.GetComponent<Animator>();
+        portalVfxAnim.SetTrigger("warp");
+    }
 }

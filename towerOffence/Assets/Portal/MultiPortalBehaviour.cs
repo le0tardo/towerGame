@@ -6,22 +6,16 @@ public class MultiPortalBehaviour : MonoBehaviour
     [Header("Path Chain")]
     [SerializeField] public SplineContainer path;
     public float pathProgression = 0; 
-    [SerializeField] GameObject portalMarker;
-    [SerializeField] Animator portalAnim;
     [SerializeField] MultiPortalBehaviour previousPortal;
 
     [Header("Visuals")]
-    [SerializeField] GameObject meshObject;
-    MeshRenderer mesh;
-    [SerializeField] Material[] materials; //red, blue, grey
-    [SerializeField] GameObject vfx;
+    [SerializeField] Animator portalAnim;
 
     public bool claimed=false;
     public bool dead=false;
 
     private void Start()
     {
-        mesh=meshObject.GetComponent<MeshRenderer>();
         UpdateVisuals();
     }
 
@@ -31,11 +25,10 @@ public class MultiPortalBehaviour : MonoBehaviour
 
         GameManager.instance.levelPathContainer = path;
         GameManager.instance.spawnSplinePoint = pathProgression;
+        GameManager.instance.currentPortal = this.gameObject;
+        GameManager.instance.SetPortalVFX();
+        UpdateVisuals();
 
-        if (portalMarker != null)
-        {
-            portalMarker.transform.position = this.gameObject.transform.position;
-        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -48,11 +41,12 @@ public class MultiPortalBehaviour : MonoBehaviour
             if (GameManager.instance.levelPathContainer == path)
             {
                 GameManager.instance.spawnSplinePoint = p;
+            }
 
-                if (portalMarker != null)
-                {
-                    portalMarker.transform.position = this.gameObject.transform.position;
-                }
+            if (GameManager.instance.currentPortal == previousPortal.gameObject)
+            {
+                GameManager.instance.currentPortal = this.gameObject;
+                GameManager.instance.SetPortalVFX();
             }
 
             claimed = true;
@@ -65,20 +59,17 @@ public class MultiPortalBehaviour : MonoBehaviour
     {
         if (dead)
         {
-            mesh.material = materials[2];
-            vfx.SetActive(false);
+            portalAnim.SetTrigger("sleep");
         }
         else
         {
             if (claimed)
             {
-                mesh.material = materials[0];
-                vfx.SetActive(true);
+                portalAnim.SetTrigger("wakeUp");
             }
             else
             {
-                mesh.material = materials[1];
-                vfx.SetActive(false);
+                portalAnim.SetTrigger("dead");
             }
         }
     }
