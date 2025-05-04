@@ -23,6 +23,7 @@ public class EnemyBehaviour : MonoBehaviour
     bool frozen = false;
 
     [SerializeField] GameObject graphics;
+    [SerializeField] Animator rig;
 
     private void Awake()
     {
@@ -111,7 +112,7 @@ public class EnemyBehaviour : MonoBehaviour
             Invoke("StopWalking",0.25f);
             if (!inCombat)
             {
-                StartCoroutine(DealDamage());
+                if (rig == null) { StartCoroutine(DealDamage()); }
                 inCombat = true;
             }
         }
@@ -128,6 +129,7 @@ public class EnemyBehaviour : MonoBehaviour
         if (anim.IsPlaying)
         {
             anim.Pause();
+            if (rig != null) { rig.SetTrigger("combat"); }
         }
     }
     void ResumeWalking()
@@ -135,6 +137,7 @@ public class EnemyBehaviour : MonoBehaviour
         if (!anim.IsPlaying)
         {
             anim.Play();
+            if (rig != null) { rig.SetTrigger("walk"); }
         }
     }
 
@@ -199,5 +202,10 @@ public class EnemyBehaviour : MonoBehaviour
            if(myTarget!=null) myTarget.GetComponent<HeroBehaviour>().TakeDamage(enemyBase.meleeDamage);
         }
         inCombat = false;
+    }
+
+    public void DeadDamageEvent()
+    {
+        if(myTarget!=null) myTarget.GetComponent<HeroBehaviour>().TakeDamage(enemyBase.meleeDamage);
     }
 }
