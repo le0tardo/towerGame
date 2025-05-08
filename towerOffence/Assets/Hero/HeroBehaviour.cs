@@ -29,6 +29,7 @@ public class HeroBehaviour : MonoBehaviour
     Vector3 startRotation;
 
     [SerializeField] Animator anim;
+    [SerializeField] GameObject toggle;
 
     private void Start()
     {
@@ -40,6 +41,8 @@ public class HeroBehaviour : MonoBehaviour
         home=transform.position;
 
         startRotation = Vector3.forward;
+
+        if (anim != null) { StartAnimation();}
     }
 
     private void Update()
@@ -233,6 +236,24 @@ public class HeroBehaviour : MonoBehaviour
     }
     #endregion
 
+    void StartAnimation()
+    {
+        string[] clips = {"idle1","idle2","idle3"};
+        int r = Random.Range(0,3);
+        float o=Random.Range(0,1f);
+        anim.Play(clips[r], 0, o);      
+    }
+
+    private void OnMouseDown()
+    {
+        Debug.Log("clicked on hero!");
+
+        if (toggle != null)
+        {
+            if (toggle.activeInHierarchy) {toggle.SetActive(false);}
+            else { toggle.SetActive(true);}
+        }
+    }
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(transform.position, heroBase.range);
