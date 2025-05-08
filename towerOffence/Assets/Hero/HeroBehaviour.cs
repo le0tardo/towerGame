@@ -28,6 +28,8 @@ public class HeroBehaviour : MonoBehaviour
     public bool isHome=true;
     Vector3 startRotation;
 
+    [SerializeField] Animator anim;
+
     private void Start()
     {
         hp = heroBase.hp;
@@ -52,6 +54,7 @@ public class HeroBehaviour : MonoBehaviour
         }
         else
         {
+            if (anim != null &&!isHome) { anim.Play("idle1"); }
             isHome = true;
             if (Vector3.Angle(transform.forward,startRotation)>1)
             { 
@@ -79,7 +82,12 @@ public class HeroBehaviour : MonoBehaviour
 
         if (hp <= 0)
         {
-            if (!isDead) { Death();} 
+            if (!isDead)
+            {
+                int n = Random.Range(1,4);
+                if (anim != null) { anim.SetInteger("int",n); anim.Play("deathSwitch"); }
+                Death();
+            } 
         }
     }
 
@@ -138,10 +146,12 @@ public class HeroBehaviour : MonoBehaviour
         float dist = Vector3.Distance(transform.position,currentTarget.transform.position);
         if (dist > 1.5f)
         {
+            if (anim != null&&!inCombat&&!isDead){ anim.Play("run");}
+
             transform.position = Vector3.MoveTowards(transform.position, currentTarget.transform.position, speed * Time.deltaTime);
 
             Vector3 direction = currentTarget.transform.position - transform.position;
-            if (direction != Vector3.zero)
+            if (direction != Vector3.zero&&!isDead)
             {
                 Quaternion toRotation = Quaternion.LookRotation(direction);
                 transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, 10f * Time.deltaTime);
@@ -153,7 +163,9 @@ public class HeroBehaviour : MonoBehaviour
         {
             if (!inCombat)
             {
-                StartCoroutine(AttackTarget());
+                if (anim != null) { anim.Play("combat1"); }
+                //combat=true;
+                StartCoroutine(AttackTarget()); //remember to set combat to true after deleting this pls!!
             }
         }
 
@@ -168,9 +180,11 @@ public class HeroBehaviour : MonoBehaviour
     }
     void GoHome()
     {
+        if (anim != null&&!inCombat&&!isDead) { anim.Play("run"); }
+
         transform.position = Vector3.MoveTowards(transform.position, home, speed * Time.deltaTime);
         Vector3 direction = home - transform.position;
-        if (direction != Vector3.zero)
+        if (direction != Vector3.zero && !isDead)
         {
             Quaternion toRotation = Quaternion.LookRotation(direction);
             transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, 10f * Time.deltaTime);
