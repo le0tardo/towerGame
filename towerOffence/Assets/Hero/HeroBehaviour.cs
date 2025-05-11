@@ -246,8 +246,6 @@ public class HeroBehaviour : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log("clicked on hero!");
-
         if (toggle != null)
         {
             if (toggle.activeInHierarchy) {toggle.SetActive(false);}

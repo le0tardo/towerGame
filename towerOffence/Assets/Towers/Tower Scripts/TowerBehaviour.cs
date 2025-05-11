@@ -88,7 +88,7 @@ public class TowerBehaviour : MonoBehaviour
     }
 
 
-    private void OnMouseDown()
+    public void MouseClick()
     {
         if (!clickedOn) { clickedOn=true; } else { clickedOn=false; }
         ToggleUI();
