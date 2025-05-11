@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 4821225203546218181}
   - component: {fileID: 529959619242385337}
   m_Layer: 3
-  m_Name: impEnemyPrefab1
+  m_Name: impEnemy1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
