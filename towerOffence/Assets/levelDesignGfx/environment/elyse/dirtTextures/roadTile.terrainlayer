@@ -7,7 +7,7 @@ TerrainLayer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: roadTile
-  m_DiffuseTexture: {fileID: 2800000, guid: 4286ec1bebf14ed48a79c519011a5c04, type: 3}
+  m_DiffuseTexture: {fileID: 2800000, guid: ad994d07362960948a2632a2313776cb, type: 3}
   m_NormalMapTexture: {fileID: 2800000, guid: 2c8ce2c79e8b16e418dc1904ebc3d09e, type: 3}
   m_MaskMapTexture: {fileID: 0}
   m_TileSize: {x: 8, y: 8}
