@@ -3,7 +3,12 @@ guid: 69660eb064f10a44aaf18d80eee69039
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: smoothRockBake
+    second: {fileID: 2100000, guid: 8b126d21a04da5d43a3cc566fb054c05, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
