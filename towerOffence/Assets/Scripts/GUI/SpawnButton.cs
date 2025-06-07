@@ -9,7 +9,7 @@ public class SpawnButton : MonoBehaviour
     [SerializeField] ManaManager manaManager;
     [SerializeField] KeyCode key;
     Button button;
-    TMP_Text buttonText;
+    [SerializeField]TMP_Text buttonText;
     [SerializeField] TMP_Text manaText;
     bool canAfford;
     float coolDown;
@@ -24,7 +24,7 @@ public class SpawnButton : MonoBehaviour
         if (manaManager == null) { manaManager=GameManager.instance.GetComponent<ManaManager>(); }
 
         button = GetComponent<Button>();
-        buttonText = GetComponentInChildren<TMP_Text>();
+        //buttonText = GetComponentInChildren<TMP_Text>();
         buttonText.text=enemyToSpawn.enemyName;
         if (manaText != null) {manaText.text=enemyToSpawn.cost.ToString();}
         coolDown = enemyToSpawn.coolDown;
