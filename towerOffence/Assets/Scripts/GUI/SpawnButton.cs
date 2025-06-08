@@ -11,24 +11,38 @@ public class SpawnButton : MonoBehaviour
     Button button;
     [SerializeField]TMP_Text buttonText;
     [SerializeField] TMP_Text manaText;
+    [SerializeField] TMP_Text lvlText;
     bool canAfford;
     float coolDown;
     float coolDownTimer = 0f;
     bool hasCooledDown;
 
     [SerializeField] Image coolDownCircle;
+    [SerializeField] Animator anim;
+
+    [Header("Stats")]
+    [SerializeField] TMP_Text atkStat;
+    [SerializeField] TMP_Text hpStat;
+    [SerializeField] TMP_Text spdStat;
+    [SerializeField] TMP_Text defStat;
 
     private void Start()
     {
         if (enemyToSpawn == null) { this.gameObject.SetActive(false); return; }
         if (manaManager == null) { manaManager=GameManager.instance.GetComponent<ManaManager>(); }
 
-        button = GetComponent<Button>();
-        //buttonText = GetComponentInChildren<TMP_Text>();
+        button = GetComponentInChildren<Button>();
+        anim= GetComponent<Animator>();
         buttonText.text=enemyToSpawn.enemyName;
+        lvlText.text = enemyToSpawn.level.ToString();
         if (manaText != null) {manaText.text=enemyToSpawn.cost.ToString();}
         coolDown = enemyToSpawn.coolDown;
         hasCooledDown = true;
+
+        atkStat.text=enemyToSpawn.damage.ToString();
+        hpStat.text=enemyToSpawn.hp.ToString();
+        spdStat.text=enemyToSpawn.speed.ToString();
+        defStat.text=enemyToSpawn.armor.ToString();
     }
 
     private void Update()
@@ -68,6 +82,7 @@ public class SpawnButton : MonoBehaviour
 
     public void SpawnFromPool()
     {
+        if (anim != null) { anim.SetTrigger("toggle");}
         enemyPool.SpawnEnemy();
         CoolDown();
     }

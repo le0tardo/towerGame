@@ -6,6 +6,7 @@ public class EnemyBase : ScriptableObject
     [Header("Enemy Stats")]
     public string enemyName;
     public EnemyType enemyType;
+    public float level=1;
     public float hp;
     public float speed;
     public float damage;

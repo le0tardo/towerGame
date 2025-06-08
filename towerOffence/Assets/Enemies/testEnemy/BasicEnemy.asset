@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Basic Minion
   enemyType: 1
+  level: 1
   hp: 12
   speed: 4
   damage: 1
