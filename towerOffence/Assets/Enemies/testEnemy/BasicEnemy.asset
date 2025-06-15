@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6848b5da1cfdf0841bd707a9f1d08c41, type: 3}
   m_Name: BasicEnemy
   m_EditorClassIdentifier: 
-  enemyName: Basic Minion
+  enemyName: Imp Minion
   enemyType: 1
   level: 1
   hp: 12
@@ -24,5 +24,5 @@ MonoBehaviour:
   cost: 10
   meleeDamage: 3
   meleeCooldown: 1
-  enemyIcon: {fileID: 0}
+  enemyIcon: {fileID: 21300000, guid: 0feea73107641c344a2902c7b7b8461d, type: 3}
   enemyPrefab: {fileID: 0}
