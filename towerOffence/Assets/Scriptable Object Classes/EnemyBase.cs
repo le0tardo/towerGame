@@ -6,10 +6,11 @@ public class EnemyBase : ScriptableObject
     [Header("Enemy Stats")]
     public string enemyName;
     public EnemyType enemyType;
-    public float level=1;
+    public float level;
     public float hp;
     public float speed;
     public float damage;
+    public float magicDamage;
     public float armor;
     public float magicResist;
     public float coolDown;
@@ -22,6 +23,10 @@ public class EnemyBase : ScriptableObject
     [Header("Enemy Gfx")]
     public Sprite enemyIcon;
     public GameObject enemyPrefab;
+
+    [Header("Upgrade")]
+    public int xp;
+    public int upgCost;
 
 }
 public enum EnemyType //even necessary?
