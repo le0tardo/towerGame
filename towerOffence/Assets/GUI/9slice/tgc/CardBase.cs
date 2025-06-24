@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class CardBase : MonoBehaviour
 {
-    [SerializeField] EnemyBase enemy;
+    [SerializeField] public EnemyBase enemy;
     [SerializeField] Sprite[] cardBacks;
     [SerializeField] Sprite[] classIcons;
 
@@ -16,6 +16,7 @@ public class CardBase : MonoBehaviour
     [SerializeField] TMP_Text classTxt;
     [SerializeField] Image portrait;
     [SerializeField] TMP_Text levelTxt;
+    [SerializeField] TMP_Text coolDownText;
 
     [Header("Stats")]
     [SerializeField] Image atkImg;
@@ -47,14 +48,15 @@ public class CardBase : MonoBehaviour
         UpdateText();
     }
 
-    void UpdateText()
+    public void UpdateText()
     {
         if (enemy == null) { return; }
 
         minionName.text = enemy.enemyName;
         manaCost.text = enemy.cost.ToString();
         levelTxt.text = enemy.level.ToString();
-        portrait.sprite = enemy.enemyIcon;
+        portrait.sprite = enemy.enemyCardIcon;
+        coolDownText.text=enemy.coolDown.ToString();
 
         atkTxt.text=enemy.damage.ToString();
         hpTxt.text=enemy.hp.ToString();
@@ -108,6 +110,7 @@ public class CardBase : MonoBehaviour
         }
 
     }
+
 
     public void LevelUp()
     {

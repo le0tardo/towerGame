@@ -21,7 +21,8 @@ public class EnemyBase : ScriptableObject
     public float meleeCooldown;
 
     [Header("Enemy Gfx")]
-    public Sprite enemyIcon;
+    public Sprite enemyButtonIcon;
+    public Sprite enemyCardIcon;
     public GameObject enemyPrefab;
 
     [Header("Upgrade")]

@@ -18,6 +18,8 @@ public class SpawnButton : MonoBehaviour
     [SerializeField] Image fill;
     [SerializeField] Sprite[] fills;
 
+    [SerializeField] CardBase myCard;
+
     bool canAfford;
     float coolDown;
     float coolDownTimer = 0f;
@@ -32,7 +34,7 @@ public class SpawnButton : MonoBehaviour
         buttonText.text=enemyToSpawn.enemyName;
         coolDown = enemyToSpawn.coolDown;
         hasCooledDown = true;
-        enemyPortrait.sprite = enemyToSpawn.enemyIcon;
+        enemyPortrait.sprite = enemyToSpawn.enemyButtonIcon;
         cantAffordColor = new Color(233f / 255f, 33f / 255f, 33f / 255f);
 
         //assign color
@@ -45,6 +47,10 @@ public class SpawnButton : MonoBehaviour
                 fill.sprite = fills[1];
             break;
         }
+
+        //assign card
+        myCard.enemy=enemyToSpawn;
+        myCard.UpdateText();
 
     }
 
@@ -107,4 +113,8 @@ public class SpawnButton : MonoBehaviour
         coolDownTimer = 0f;
     }
 
+    public void BringToFront()
+    {
+        myCard.transform.SetAsLastSibling();
+    }
 }
