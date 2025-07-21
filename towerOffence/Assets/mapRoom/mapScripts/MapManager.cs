@@ -13,6 +13,7 @@ public class MapManager : MonoBehaviour
     [SerializeField] GameObject levelBox;
     [SerializeField] TMP_Text levelName;
     [SerializeField] Animator boxAnim;
+    [SerializeField] Animator barAnim;
 
     SceneLoader sceneLoader;
 
@@ -65,8 +66,8 @@ public class MapManager : MonoBehaviour
 
     public void AnimateBox(bool moveUp)
     {
-        if (moveUp){ boxAnim.SetTrigger("up");}
-        else { boxAnim.SetTrigger("down");}
+        if (moveUp){ boxAnim.SetTrigger("up");barAnim.SetTrigger("in"); }
+        else { boxAnim.SetTrigger("down"); barAnim.SetTrigger("out"); }
     }
     public void DrawLevelInfo()
     {
